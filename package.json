@@ -1,0 +1,19 @@
+{
+  "name": "comp20-rate-my-classes",
+  "version": "1.0.0",
+  "description": "COMP20 Final Project Rate My Classes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sevans09/COMP20-rate-my-classes.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sevans09/COMP20-rate-my-classes/issues"
+  },
+  "homepage": "https://github.com/sevans09/COMP20-rate-my-classes#readme"
+}
