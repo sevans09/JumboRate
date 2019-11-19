@@ -1,0 +1,46 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background-color: #FBE8A6;
+}
+
+.header {
+    background-color: #303c6c;
+    padding: 2%;
+    color: #ffffff;
+}
+
+.title {
+    font-size: 2em;
+    font-weight: bold;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.footer {
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #303c6c;
+    padding: .5%;
+    color: white;
+    font-size: 75%;
+}
+
+.link {
+    text-decoration: none;
+    color: #ffffff;
+    padding: 2%; 
+}
+
+.link:hover {
+    color: #808080;
+}
+
+.container {
+    text-align: center;
+    margin: 2%;
+    margin-top: 10%;
+}
