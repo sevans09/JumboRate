@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/sevans09/COMP20-rate-my-classes/issues"
   },
-  "homepage": "https://github.com/sevans09/COMP20-rate-my-classes#readme"
+  "homepage": "https://github.com/sevans09/COMP20-rate-my-classes#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
