@@ -2,13 +2,29 @@ html, body {
     margin: 0;
     padding: 0;
     border: 0;
-    background-color: #FBE8A6;
+    background-color: #3F88C5;
+    font-family: 'Open Sans', sans-serif;
+}
+
+@font-face {
+    font-family: 'nevis';
+    src:  url('nevis.woff2') format('woff'),
+          url('nevis.ttf') format('truetype');
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'nevis';
+}
+
+.sub {
+    font-family: 'Open Sans', sans-serif;
 }
 
 .header {
-    background-color: #303c6c;
+    background-color: #654321;
     padding: 2%;
     color: #ffffff;
+    font-family: 'nevis';
 }
 
 .title {
@@ -23,10 +39,11 @@ html, body {
     position: fixed;
     bottom: 0;
     width: 100%;
-    background-color: #303c6c;
+    background-color: #654321;
     padding: .5%;
     color: white;
     font-size: 75%;
+    font-family: 'nevis';
 }
 
 .link {
@@ -37,10 +54,4 @@ html, body {
 
 .link:hover {
     color: #808080;
-}
-
-.container {
-    text-align: center;
-    margin: 2%;
-    margin-top: 10%;
 }

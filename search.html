@@ -7,8 +7,134 @@
     <!-- <script language="javascript" src=".js"></script> -->
     <link rel="stylesheet" type="text/css" href="styles.css">
     <title>Search</title>
+
+    <style>
+        .column {
+            float: left;
+            margin: .5% 2%;
+        }
+
+        .col-sm {
+            width: 15%;
+        }
+
+        .col-md {
+            width: 20%;
+        }
+
+        .col-lg {
+            width: 29%;
+        }
+
+        .col-xlg {
+            width: 50%;
+        }
+
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .container {
+            text-align: center;
+            padding: 2% 10%;
+            margin: 2%;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+
+        .select {
+            width: 20%;
+            margin: 0% 2%;
+        }
+
+        /* .totals {
+            background-color: aqua;
+        } */
+
+        .value {
+            font-weight: bold;
+            font-size: 200%;
+        }
+
+        .report {
+            text-align: left;
+            padding: 2% 2%;
+            margin: 2%;
+        }
+    </style>
 </head>
 <body>
-    Search for a Class
+    <div class="container">
+        Search for a Class: 
+        <select class="select" name="class_dep">
+            <option value="Select">Select a department</option>
+            <option value="COMP">COMP</option>
+            <option value="MATH">MATH</option>
+            <option value="EM">EM</option>
+            <option value="PE">PE</option>
+        </select>
+        <select class="select" name="class_num">
+            <option value="10">Select a class number</option>
+            <option value="20">20</option>
+            <option value="30">30</option>
+            <option value="40">40</option>
+        </select>
+        <button type="button">Go</button>
+    </div>
+
+    <div class="container totals">
+        <h2>COMP20: Web Programming</h2>
+        <hr size='2'/>
+        <div class="row">
+            <div class="column col-lg label">
+                Overall Rating
+            </div>
+            <div class="column col-lg label">
+                Difficulty 
+            </div>
+            <div class="column col-lg label">
+                Workload
+            </div>
+        </div>
+        <div class="row">
+            <div id="overall_rating" class="column col-lg value">
+                5.0
+            </div>
+            <div id="difficulty" class="column col-lg value">
+                4.0 
+            </div>
+            <div id="workload" class="column col-lg value">
+                3.0
+            </div>
+        </div>
+    </div>
+
+    <div class="container report">
+        <div class="row">
+            <div class="column col-sm label">
+                <span>11/19/2019</span>
+                <div>
+                    <span>5.0</span> Overall Rating
+                </div>
+                <div>
+                    <span>5.0</span> Difficulty
+                </div>
+                <div>
+                    <span>5.0</span> Workload
+                </div>
+            </div>
+            <div class="column col-md label">
+                <div>Professor: <span>Lisa D. </span> </div>
+                <div>Grade Recieved: <span> A </span> </div>
+                <div>Attendance: <span> Not Mandatory </span> </div>
+            </div>
+            <div class="column col-xlg label">
+                This is the comments section. This is the comments section. This is the comments section. This is the comments section. This is the comments section. This is the comments section. This is the comments section. This is the comments section. This is the comments section. This is the comments section. This is the comments section. This is the comments section. This is the comments section. 
+            </div>
+        </div>
+    </div>    
+
+
 </body>
 </html>
