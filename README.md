@@ -1,12 +1,14 @@
 # Rate My Tufts Classes
-## COMP20 Final Project
-### Fall 2019
+## COMP20 Final Project Fall 2019
 
 ## Team Members
 * Sook-Hee Evans
 * Nicole Kennedy
 * Eli Lleshi
 * Brooke Peterson
+
+## Deployed Application
+https://tufts-rate-my-classes.herokuapp.com
 
 ## Local Setup
 - `cd <PATH TO DIRECTORY YOU WANT YOUR CODE TO BE IN>`
