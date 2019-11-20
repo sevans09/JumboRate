@@ -29,7 +29,7 @@ app.get('/about.html', function(req, res) {
 });
 
 app.get('/guidelines.html', function(req, res) {
-     res.sendFile(path.join(__dirname, 'guidlines.html'));
+     res.sendFile(path.join(__dirname, 'guidelines.html'));
 });
 
 app.get('/contact.html', function(req, res) {
