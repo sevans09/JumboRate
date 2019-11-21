@@ -9,115 +9,57 @@
     <title>Search</title>
 
     <style>
-        .column {
-            float: left;
-            margin: .5% 2%;
+        div {
+            padding: 1% 1%;
+            font-size: 120%;
+        }
+        .button {
+            background-color: #654321;
+            border: none;
+            color: #ffffff;
+            padding: .5% 2%;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 5px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 100%;
         }
 
-        .col-sm {
-            width: 15%;
-        }
-
-        .col-md {
-            width: 20%;
-        }
-
-        .col-lg {
-            width: 29%;
-        }
-
-        .col-xlg {
-            width: 50%;
-        }
-
-        .row:after {
-            content: "";
-            display: table;
-            clear: both;
-        }
-
-        .select {
-            width: 20%;
-            margin: 0% 2%;
-        }
-
-        .value {
-            font-weight: bold;
-            font-size: 200%;
+        .button:hover {
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
     <div class="container gray center">
-        Search for a Class: 
-        <select class="select" name="class_dep">
-            <option value="Select">Select a department</option>
-            <option value="COMP">COMP</option>
-            <option value="MATH">MATH</option>
-            <option value="EM">EM</option>
-            <option value="PE">PE</option>
-        </select>
-        <select class="select" name="class_num">
-            <option value="10">Select a class number</option>
-            <option value="20">20</option>
-            <option value="30">30</option>
-            <option value="40">40</option>
-        </select>
-        <button type="button">Go</button>
-    </div>
-
-    <div class="container gray center">
-        <h2>COMP20: Web Programming</h2>
-        <hr size='2'/>
-        <div class="row">
-            <div class="column col-lg label">
-                Overall Rating
-            </div>
-            <div class="column col-lg label">
-                Difficulty 
-            </div>
-            <div class="column col-lg label">
-                Workload
-            </div>
+        <h1 class="head">Search for a Class</h1>
+        <div>Select a Department</div>
+        <div>
+            <select class="select" name="class_dep">
+                <option value="Select">Select a department</option>
+                <option value="COMP">COMP</option>
+                <option value="MATH">MATH</option>
+                <option value="EM">EM</option>
+                <option value="PE">PE</option>
+            </select>
         </div>
-        <div class="row">
-            <div id="overall_rating" class="column col-lg value">
-                5.0
-            </div>
-            <div id="difficulty" class="column col-lg value">
-                4.0 
-            </div>
-            <div id="workload" class="column col-lg value">
-                3.0
-            </div>
+
+        <div>Select a Class Number</div>        
+        <div>
+            <select class="select" name="class_num">
+                <option value="10">Select a class number</option>
+                <option value="20">20</option>
+                <option value="30">30</option>
+                <option value="40">40</option>
+            </select>
+        </div>
+        <div>
+            <form action="search_result.html">
+                <button class="button" type="submit">Go</button>
+            </form>
         </div>
     </div>
-
-    <div class="container gray left">
-        <div class="row">
-            <div class="column col-sm label">
-                <span>11/19/2019</span>
-                <div>
-                    <span>5.0</span> Overall Rating
-                </div>
-                <div>
-                    <span>5.0</span> Difficulty
-                </div>
-                <div>
-                    <span>5.0</span> Workload
-                </div>
-            </div>
-            <div class="column col-md label">
-                <div>Professor: <span>Lisa D. </span> </div>
-                <div>Grade Recieved: <span> A </span> </div>
-                <div>Attendance: <span> Not Mandatory </span> </div>
-            </div>
-            <div class="column col-xlg label">
-                This is the comments section. This is the comments section. This is the comments section. This is the comments section. This is the comments section. This is the comments section. This is the comments section. This is the comments section. This is the comments section. This is the comments section. This is the comments section. This is the comments section. This is the comments section. 
-            </div>
-        </div>
-    </div>    
-
-
 </body>
 </html>

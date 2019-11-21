@@ -12,12 +12,12 @@ html, body {
           url('nevis.ttf') format('truetype');
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'nevis';
-}
-
 .sub {
     font-family: 'Open Sans', sans-serif;
+}
+
+.head {
+    font-family: 'nevis';
 }
 
 .header {
