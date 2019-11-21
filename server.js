@@ -11,23 +11,28 @@ app.get('/', function(req, res) {
      res.sendFile(path.join(__dirname, 'index.html'));
 });
 
+app.get('/index.html', function(req, res) {
+     res.sendFile(path.join(__dirname, 'index.html'));
+});
+
+
 app.get('/search.html', function(req, res) {
      res.sendFile(path.join(__dirname, 'search.html'));
 });
 
-app.get('/rate', function(req, res) {
+app.get('/rate.html', function(req, res) {
      res.sendFile(path.join(__dirname, 'rate.html'));
 });
 
-app.get('/about', function(req, res) {
+app.get('/about.html', function(req, res) {
      res.sendFile(path.join(__dirname, 'about.html'));
 });
 
-app.get('/guidelines', function(req, res) {
-     res.sendFile(path.join(__dirname, 'guidlines.html'));
+app.get('/guidelines.html', function(req, res) {
+     res.sendFile(path.join(__dirname, 'guidelines.html'));
 });
 
-app.get('/contact', function(req, res) {
+app.get('/contact.html', function(req, res) {
      res.sendFile(path.join(__dirname, 'contact.html'));
 });
 
