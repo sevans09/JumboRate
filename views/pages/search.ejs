@@ -1,11 +1,7 @@
 <!doctype html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <!-- <script language="javascript" src=".js"></script> -->
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <% include ../partials/header.ejs %>
     <title>Search</title>
 
     <style>
@@ -33,6 +29,8 @@
     </style>
 </head>
 <body>
+    <% include ../partials/nav.ejs %>
+
     <div class="container gray center">
         <h1 class="head">Search for a Class</h1>
         <div>Select a Department</div>
@@ -56,10 +54,11 @@
             </select>
         </div>
         <div>
-            <form action="search_result.html">
+            <form action="search_result">
                 <button class="button" type="submit">Go</button>
             </form>
         </div>
     </div>
+    <% include ../partials/footer.ejs %>
 </body>
 </html>

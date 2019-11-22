@@ -1,0 +1,45 @@
+<html lang="en">
+<head>
+    <% include ../partials/header.ejs %>
+
+    <title>Rate my Classes</title>
+
+    <style>
+        .button {
+            background-color: #ffffff;
+            border: none;
+            color: #235EA4;
+            padding: 2%;
+            margin: 2%;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 150%;
+            width: 30%;
+            border-radius: 5px;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .button:hover {
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+            cursor: pointer;
+        }
+
+        .container-button {
+            padding: 2% 10%;
+            margin-top: 10%;
+        }
+    </style>
+</head>
+<body>
+    <% include ../partials/nav.ejs %>
+
+    <div class="container container-button center">
+        <a class="button" href="search">Search for a Class</a>
+        <a class="button" href="rate">Rate a Class</a>
+    </div>
+
+    <% include ../partials/footer.ejs %>
+    
+</body>
+</html>
