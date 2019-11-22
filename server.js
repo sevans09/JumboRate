@@ -35,6 +35,10 @@ app.get('/guidelines.html', function(req, res) {
      res.sendFile(path.join(__dirname, 'guidelines.html'));
 });
 
+app.get('/search_results.html', function(req, res) {
+     res.sendFile(path.join(__dirname, 'search_results.html'));
+});
+
 app.get('/contact.html', function(req, res) {
      res.sendFile(path.join(__dirname, 'contact.html'));
 });
