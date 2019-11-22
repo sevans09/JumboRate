@@ -8,8 +8,9 @@ html, body {
 
 @font-face {
     font-family: 'nevis';
-    src:  url('./fonts/nevis.woff2') format('woff'),
-          url('./fonts/nevis.ttf') format('truetype');
+    src:  url('../../../fonts/nevis.ttf' format('truetype');
+/*     src:  url('./fonts/nevis.woff2') format('woff'),
+          url('./fonts/nevis.ttf') format('truetype'); */
 }
 /* 
 @font-face {
