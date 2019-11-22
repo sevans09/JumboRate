@@ -4,39 +4,43 @@ const path = require('path');
 const port = process.env.PORT || 5000;
 
 app.get('/styles.css', function(req, res) {
-     res.sendFile(path.join(__dirname, 'styles.css'));
+     res.sendFile(path.join(__dirname, 'public/stylesheets/styles.css'));
 });
 
 app.get('/', function(req, res) {
-     res.sendFile(path.join(__dirname, 'index.html'));
+     res.sendFile(path.join(__dirname, 'public/pages/index.html'));
 });
 
 app.get('/index.html', function(req, res) {
-     res.sendFile(path.join(__dirname, 'index.html'));
+     res.sendFile(path.join(__dirname, 'public/pages/index.html'));
 });
 
 app.get('/search.html', function(req, res) {
-     res.sendFile(path.join(__dirname, 'search.html'));
+     res.sendFile(path.join(__dirname, 'public/pages/search.html'));
 });
 
 app.get('/search_result.html', function(req, res) {
-     res.sendFile(path.join(__dirname, 'search_result.html'));
+     res.sendFile(path.join(__dirname, 'public/pages/search_result.html'));
 });
 
 app.get('/rate.html', function(req, res) {
-     res.sendFile(path.join(__dirname, 'rate.html'));
+     res.sendFile(path.join(__dirname, 'public/pages/rate.html'));
 });
 
 app.get('/about.html', function(req, res) {
-     res.sendFile(path.join(__dirname, 'about.html'));
+     res.sendFile(path.join(__dirname, 'public/pages/about.html'));
 });
 
 app.get('/guidelines.html', function(req, res) {
-     res.sendFile(path.join(__dirname, 'guidelines.html'));
+     res.sendFile(path.join(__dirname, 'public/pages/guidelines.html'));
+});
+
+app.get('/search_results.html', function(req, res) {
+     res.sendFile(path.join(__dirname, 'search_results.html'));
 });
 
 app.get('/contact.html', function(req, res) {
-     res.sendFile(path.join(__dirname, 'contact.html'));
+     res.sendFile(path.join(__dirname, 'public/pages/contact.html'));
 });
 
 
