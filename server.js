@@ -15,9 +15,12 @@ app.get('/index.html', function(req, res) {
      res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-
 app.get('/search.html', function(req, res) {
      res.sendFile(path.join(__dirname, 'search.html'));
+});
+
+app.get('/search_result.html', function(req, res) {
+     res.sendFile(path.join(__dirname, 'search_result.html'));
 });
 
 app.get('/rate.html', function(req, res) {
