@@ -45,5 +45,9 @@ app.get('/contact', function(req, res) {
      res.render('pages/contact');
 });
 
+app.get('/login', function(req, res) {
+     res.render('pages/login');
+});
+
 app.listen(port);
 console.log('Running at Port 5000');
