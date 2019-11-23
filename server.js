@@ -9,6 +9,10 @@ app.get('/styles.css', function(req, res) {
      res.sendFile(path.join(__dirname, 'public/stylesheets/styles.css'));
 });
 
+app.get('/database.js', function(req, res) {
+     res.sendFile(path.join(__dirname, 'database.js'));
+});
+
 app.get('/', function(req, res) {
      res.render('pages/index');
 });
