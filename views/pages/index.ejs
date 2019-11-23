@@ -42,4 +42,24 @@
     <% include ../partials/footer.ejs %>
     
 </body>
+
+<script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyC9j40ZN83GVo9IfXUkyh8gmTdyyTlMHxM",
+    authDomain: "comp20-rate-my-classes.firebaseapp.com",
+    databaseURL: "https://comp20-rate-my-classes.firebaseio.com",
+    projectId: "comp20-rate-my-classes",
+    storageBucket: "comp20-rate-my-classes.appspot.com",
+    messagingSenderId: "567919611027",
+    appId: "1:567919611027:web:6d25a44f92e6fe51211166",
+    measurementId: "G-MJKBR14WXN"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  var database = firebase.database();
+</script>
+
 </html>
