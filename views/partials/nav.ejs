@@ -1,4 +1,12 @@
-<script src="login.js"></script>
+<script>
+  function expand_collapse() {
+    if($(".dropdown").css('display') == 'none') {
+      $(".dropdown").show("slow");
+    } else {
+      $(".dropdown").hide("slow");
+    } 
+  }
+</script>
 
 <div class="header">
     <a class="title" href="home">Rate My Tufts Classes</a>
