@@ -12,6 +12,9 @@ html, body {
 /*     src:  url('./fonts/nevis.woff2') format('woff'),
           url('./fonts/nevis.ttf') format('truetype'); */
 }
+.body {
+    background-color: #3F88C5;
+}
 
 .sub {
     font-family: 'Open Sans', sans-serif;
@@ -59,7 +62,7 @@ html, body {
 
 .container {
     padding: 2% 2%;
-    margin: 2%;
+    margin-top: 2%;
 }
 
 .gray {
