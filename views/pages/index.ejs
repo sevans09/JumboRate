@@ -61,6 +61,8 @@
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   var database = firebase.database();
+ 
+  var provider = new firebase.auth.GoogleAuthProvider();
 
   firebase.auth().signInWithPopup(provider).then(function(result) {
       // The signed-in user info.
