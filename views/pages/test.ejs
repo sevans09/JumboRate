@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+    <% include ../partials/header.ejs %>
+    <title>Test</title>
+</head>
+<body>
+        <% include ../partials/nav.ejs %>
+
+        <div class="container">
+            <button type="button" class="btn btn-success" onclick="postClass('COMP', 40, 'info')">Test Database</button>
+            <button type="button" class="btn btn-success" onclick="getPosts()">Print Database</button>
+        </div>
+
+        <div>
+            <form action="/submit-test" method="post">
+                <button type="submit" class="btn btn-light">Submit</button>
+            </form>
+        </div>
+    
+        <div class="container">
+            <form action="/submit-rating" method="post">
+                <div class="row">
+                    <div class="col form-group">
+                        <input name="dep" type="text" class="form-control" placeholder="Department" value="COMP">
+                    </div>
+                    <div class="col form-group">
+                        <input name="class_num" type="text" class="form-control" placeholder="Class Number" value="20">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col form-group">
+                        <input name="rating" type="text" class="form-control" placeholder="Overall Rating" value="3">
+                    </div>
+                    <div class="col form-group">
+                        <input name="difficulty" type="text" class="form-control" placeholder="Difficulty" value="4">
+                    </div>
+                    <div class="col form-group">
+                        <input name="workload" type="text" class="form-control" placeholder="Workload" value="5">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col form-group">
+                        <input name="prof" type="text" class="form-control" placeholder="Professor" value="Professor">
+                    </div>
+                    <div class="col form-group">
+                        <input name="grade" type="text" class="form-control" placeholder="Grade" value="Grade">
+                    </div>
+                    <div class="col form-group">
+                        <input name="attendance" type="text" class="form-control" placeholder="Attendance" value="Attendance">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <textarea name="comments" class="form-control" placeholder="Comments" rows="3">comment</textarea>
+                </div>
+                <button type="submit" class="btn btn-light">Submit</button>
+            </form>
+        </div>
+
+        <% include ../partials/footer.ejs %>
+        
+    </body>
+</html>

@@ -12,10 +12,9 @@ html, body {
 
 @font-face {
     font-family: 'nevis';
-    src:  url('./fonts/nevis.ttf') format('truetype');
-/*     src:  url('./fonts/nevis.woff2') format('woff'),
-          url('./fonts/nevis.ttf') format('truetype'); */
+    src:  url('nevis.ttf') format('truetype');
 }
+
 .body {
     background-color: #3F88C5;
 }
@@ -37,8 +36,6 @@ html, body {
 
 .footer {
     text-align: center;
-    position: fixed;
-    bottom: 0;
     width: 100%;
     background-color: #654321;
     padding: .5%;
