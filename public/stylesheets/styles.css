@@ -6,6 +6,10 @@ html, body {
     font-family: 'Open Sans', sans-serif;
 }
 
+.container {
+    background-color: #3F88C5;
+}
+
 @font-face {
     font-family: 'nevis';
     src:  url('./fonts/nevis.ttf') format('truetype');
@@ -21,13 +25,6 @@ html, body {
 }
 
 .head {
-    font-family: 'nevis';
-}
-
-.header {
-    background-color: #654321;
-    padding: 2%;
-    color: #ffffff;
     font-family: 'nevis';
 }
 
