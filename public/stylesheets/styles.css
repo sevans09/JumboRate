@@ -10,7 +10,7 @@
         margin: 0;
         padding: 0;
         border: 0;
-        background-color: #3F88C5;
+        background-color: rgb(175, 208, 241);
         font-family: 'Open Sans', sans-serif;
         font-size: 16px
     }
@@ -23,6 +23,13 @@
         color: #3F88C5;
     }
 
+    .white {
+        color: #fff;
+    }
+
+    .light {
+        font-style: lighter;
+    }
     .brown {
         color: #654321;
     }

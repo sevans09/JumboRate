@@ -10,7 +10,7 @@
             <div class="container" style="background-color: rgba(255, 255, 255, 0.8); padding: 2% 2%; margin-top: 2%">
                 <div class="container" style="padding-bottom: 5%">
                     <h1 class="head text-center">COMP20: Web Programming</h1>
-                    <div class="text-center" style="padding: 1% 0%"><a class="btn-sm btn-primary" style="text-decoration: none;" href="rate">Rate this Class</a></div>
+                    <div class="text-center" style="padding-top: 2%"><a class="btn-sm btn-primary" style="text-decoration: none;" href="rate">Rate this Class</a></div>
                 </div>
 
                 <div class="container text-center">
@@ -37,79 +37,100 @@
                         </div>
                     </div>
                 </div>
-                 
             </div>
+
+            <div class="row justify-content-center" style="padding: 2% 0%">
+                <div class="col-4 text-center" >
+                    <label class="mr-sm-2" for="sort" style="color: #fff">Sort By:</label> 
+                    <select class="select" name="sort" id="sort">
+                        <option value="All">Date</option>
+                        <option value="Low to High"> Rating; Low to High</option>
+                        <option value="High to Low">Rating; High to Low</option>
+                    </select>
+                </div>
+                <div class="col-4 text-center">
+                    <label class="mr-sm-2" for="filter" style="color: #fff">Filter by Professor:</label> 
+                    <select class="select" name="filter" id="filter">
+                        <option value="All">All</option>
+                        <option value="Lisa D.">Lisa D.</option>
+                        <option value="Ming">Ming</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="container" style="background-color: rgba(57, 62, 65, 0.8); padding: 2% 2%;">
+                <div class="row head label white">11/19/2019</div>
+                <hr style="background-color:white">
+                <div class="row">
+                    <div class="col-3">
+                        <div class="white">
+                            <span>5.0</span> Overall Rating
+                        </div>
+                        <div class="white">
+                            <span>5.0</span> Difficulty
+                        </div>
+                        <div class="white">
+                            <span>5.0</span> Workload
+                        </div>
+                    </div>
+                    <div class="col-1.5 white">
+                        Professor: <br>
+                        Grade: <br> 
+                        Attendance:  
+                    </div>
+                    <div class="col-2 white">
+                        Ming <br>
+                        A <br> 
+                        Not Mandatory
+                    </div>
+                    <div class="col-5 white">
+                        I LOVED this class. Ming was amazing. It truly did change my life. I am now a professional 
+                        web programmer for Google, and honestly, I owe it all to COMP20 for introducing me to web 
+                        programming in a fun, low stress environment. Highly recommend this class to anyone at Tufts. 
+                    </div>
+                </div>
+            
+            </div>
+
+            <div class="container" style="background-color: rgba(35, 94, 164, 0.8); padding: 2% 2%;">
+                    <div class="row head label white">11/19/2019</div>
+                    <hr style="background-color:white">
+                    <div class="row">
+                        <div class="col-3">
+                            <div class="white">
+                                <span>5.0</span> Overall Rating
+                            </div>
+                            <div class="white">
+                                <span>5.0</span> Difficulty
+                            </div>
+                            <div class="white">
+                                <span>5.0</span> Workload
+                            </div>
+                        </div>
+                        <div class="col-1.5 white">
+                            Professor: <br>
+                            Grade: <br> 
+                            Attendance:  
+                        </div>
+                        <div class="col-2 white">
+                            Ming <br>
+                            A <br> 
+                            Not Mandatory
+                        </div>
+                        <div class="col-5 white">
+                            I LOVED this class. Ming was amazing. It truly did change my life. I am now a professional 
+                            web programmer for Google, and honestly, I owe it all to COMP20 for introducing me to web 
+                            programming in a fun, low stress environment. Highly recommend this class to anyone at Tufts. 
+                        </div>
+                    </div>
+                
+                </div>
+
+
         </main>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <div class="container gray center">
-        <div class="row">
-            <div class="column col-half">
-                Sort By: 
-                <select class="select" name="sort">
-                    <option value="All">Date</option>
-                    <option value="Low to High"> Rating Low to High</option>
-                    <option value="High to Low">Rating High to Low</option>
-                </select>
-            </div>
-            <div class="column col-half">
-                Filter by Professor: 
-                <select class="select" name="sort">
-                    <option value="All">All</option>
-                    <option value="Lisa D.">Lisa D.</option>
-                    <option value="Ming">Ming</option>
-                </select>
-            </div>
-        </div>
-    </div>
-
-    <div class="container gray left">
-        <div class="head label">11/19/2019</div>
-        <div class="row">
-            <div class="column col-sm">
-                <div>
-                    <span>5.0</span> Overall Rating
-                </div>
-                <div>
-                    <span>5.0</span> Difficulty
-                </div>
-                <div>
-                    <span>5.0</span> Workload
-                </div>
-            </div>
-            <div class="column col-md">
-                <div>Professor: &nbsp;&nbsp;&nbsp;&nbsp; <span class="val">Lisa D. </span> </div>
-                <div>Grade: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="val"> A </span> </div>
-                <div>Attendance: &nbsp;<span class="val"> Not Mandatory </span> </div>
-            </div>
-            <div class="column col-xlg">
-                This is the comments section. This is the comments section. This is the comments section. This is the comments section. This is the comments section. This is the comments section. This is the comments section. This is the comments section. This is the comments section. This is the comments section. This is the comments section. This is the comments section. This is the comments section. 
-            </div>
-        </div>
-    </div>
 
     <% include ../partials/footer.ejs %>
 </body>
