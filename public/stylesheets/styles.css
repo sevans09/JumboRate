@@ -14,8 +14,20 @@
         font-family: 'Open Sans', sans-serif;
     }
 
+    .blue {
+        color: #3F88C5;
+    }
+
+    .brown {
+        color: #654321;
+    }
+
     .head {
         font-family:'nevis';
+    }
+
+    .row {
+        padding: .5% 0 .5% 0;
     }
 
     .sub {
