@@ -46,7 +46,11 @@
         font-family: 'Open Sans', sans-serif;
     }
 
-
+    .link {
+        text-decoration: none;
+        color: #ffffff;
+        padding: 2%; 
+    }
 
     .footer > .container {
         padding-right: 15px;
