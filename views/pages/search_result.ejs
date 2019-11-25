@@ -56,7 +56,7 @@
                 </div>
                 <div class="col-4 text-center">
                     <label class="mr-sm-2" for="filter" style="color: #000">Filter by Professor:</label> 
-                    <select class="select" name="filter" id="select_filter" style="width: 50%">
+                    <select class="select" name="filter" id="select_filter" onchange="get_data()" style="width: 50%">
                         <option value="All">All</option>
                     </select>
                 </div>
@@ -75,7 +75,8 @@
             get_data(update_prof_filter);
         }); 
 
-        function get_data(update_prof_filter) {
+        function get_data(functionality = 0) {
+            console.log("get data");
             var dep = document.getElementById("department").innerHTML;
             var class_num = document.getElementById("class_num").innerHTML;
 
@@ -94,7 +95,9 @@
                     data = JSON.parse(this.responseText);
                     console.log("display data: ");
                     console.log(data);
-                    update_prof_filter();
+                    if (functionality) {
+                        functionality();
+                    }
                     update_display();
                 }
             };
@@ -123,7 +126,6 @@
             var difficulty = new Number(0);
             var overall = 0;
             var workload = 0;
-            console.log(difficulty + " - " + overall + " - " + workload);
 
             $("#display").html("");
             ratings.forEach(function(elem, index) {
@@ -136,20 +138,14 @@
             });
 
             total = ratings.length;
-            console.log(difficulty + " - " + overall + " - " + workload);
 
             difficulty = (difficulty / total).toFixed(1);
             overall = (overall / total).toFixed(1);
             workload = (workload / total).toFixed(1);
 
-            console.log(difficulty + " - " + overall + " - " + workload);
-
-            console.log("size: " + total);
-
             $("#avg_difficulty").html(difficulty);
             $("#avg_overall").html(overall);
             $("#avg_workload").html(workload);
-
         }
 
         function display_html(elem, color) {

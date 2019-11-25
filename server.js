@@ -143,13 +143,23 @@ app.get('/test_search', function(req, res) {
 
      var ref = firebase.database().ref("class/" + queries.dep + "/" + queries.class_num);
 
-     ref.on("value", function(snapshot) {
-          console.log(snapshot.val());
-          res.json(snapshot.val());
-          res.end();
-          }, function (errorObject) {
-               console.log("The read failed: " + errorObject.code);
-     });
+     if (queries.filter == "All") {
+          ref.on("value", function(snapshot) {
+               console.log(snapshot.val());
+               res.json(snapshot.val());
+               res.end();
+               }, function (errorObject) {
+                    console.log("The read failed: " + errorObject.code);
+          });
+     } else {
+          console.log("filter by prof");
+          ref.orderByChild("rating/prof").equalTo(queries.filter).on("value", function(snapshot) {
+            console.log(snapshot.val());
+            res.json(snapshot.val());
+            res.end();
+          });
+     }
+
 });
 
 // gets all classes in the database
