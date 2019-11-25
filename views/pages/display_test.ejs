@@ -7,7 +7,10 @@
 <body>
     <% include ../partials/nav.ejs %>
     
-    This is the display test. 
+    This is the display test NUMBER 1. 
+    <div>
+        <h1><%= dep %> <%= class_num %> </h1>
+    </div>
 
     <!-- this loops through all of the ratings to display each one -->
     <% for (const property in ratings) { %>
