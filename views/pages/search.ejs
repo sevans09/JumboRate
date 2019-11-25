@@ -35,12 +35,10 @@
         <h1 class="head">Search for a Class</h1>
         <div>Select a Department</div>
         <div>
-            <select class="select" name="class_dep">
-                <option value="Select">Select a department</option>
-                <option value="COMP">COMP</option>
-                <option value="MATH">MATH</option>
-                <option value="EM">EM</option>
-                <option value="PE">PE</option>
+            <select class="select" id="select_dep" name="class_dep">
+                <% data.forEach(function(elem) { %>
+                    <option value="elem"> <%=elem%> </option>
+                <% }); %>
             </select>
         </div>
 

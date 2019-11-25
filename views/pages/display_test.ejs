@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+    <% include ../partials/header.ejs %>
+    <title>Display Test</title>
+</head>
+<body>
+    <% include ../partials/nav.ejs %>
+    
+    This is the display test. 
+
+    <!-- this loops through all of the ratings to display each one -->
+    <% for (const property in ratings) { %>
+        <% record = ratings[property].rating; %>
+        <!-- put your template for displaying one class rating in here  -->
+        <!-- the object "rating" has all class info -->
+
+
+        <!-- example start -->
+
+        <div class="container gray left">
+                <hr size='2'/>
+                <%= JSON.stringify(record) %>
+                <div class="head label"> <%= ratings[property].date %></div>
+                <div class="row">
+                    <div class="column col-sm">
+                        <div>
+                            <span> <%= record.rating %></span> Overall Rating
+                        </div>
+                        <div>
+                            <span> <%= record.difficulty%> </span> Difficulty
+                        </div>
+                        <div>
+                            <span><%= record.workload %></span> Workload
+                        </div>
+                    </div>
+                    <div class="column col-md">
+                        <div>Professor: <span class="val"> <%= record.prof %> </span> </div>
+                        <div>Grade: <span class="val"> <%= record.grade %> </span> </div>
+                        <div>Attendance: <span class="val"> <%= record.attendance %> </span> </div>
+                    </div>
+                    <div class="column col-xlg">
+                        <%= record.comments %>
+                    </div>
+                </div>
+            </div>
+
+        <!-- example end -->
+
+    <% } %>
+
+    <% include ../partials/footer.ejs %>
+</body>
+</html>
