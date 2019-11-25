@@ -9,20 +9,30 @@
   }
 </script>
 
-<div class="header">
-    <a class="title" href="home">Rate My Tufts Classes</a>
-    <a class="link" href="search">Search for a Class</a>
-    <a class="link" href="rate">Rate a Class</a>
-   
-   <!-- profile icon and login dropdown -->
 
-   <div class="login_container" onClick="expand_collapse()">
-    <a> <img style="width:50%" src="profile_icon.png"></a>
-    <br> <br>
-	    <div class="dropdown">   
-	      <li><a onClick="signInWithPopup()" > Log In </a></li>
-	      <li><a> Sign Out </a></li>
-	    </div>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="title" href="home">Rate My Tufts Classes</a>
     </div>
-      
-</div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="search">Search for a Class</a></li>
+      <li><a href="rate">Rate a Class</a></li>
+      <li><a href="#">Page 2</a></li>
+      <li class="nav-item"
+        <div class="login_container" onClick="expand_collapse()">
+          <a> <img style="width:50%" src="profile_icon.png"></a>
+          <br> <br>
+            <div class="dropdown">   
+              <li><a onClick="signInWithPopup()" > Log In </a></li>
+              <li><a> Sign Out </a></li>
+            </div>
+        </div>
+      </li> 
+    </ul>
+  </div>
+</nav>
+   
+
+   
+    
