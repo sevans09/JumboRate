@@ -158,6 +158,7 @@ app.get('/test_search', function(req, res) {
      });
 });
 
+// gets all classes in the database
 app.get('/classes', function(req, res) {
      var ref = firebase.database().ref("class");
 
