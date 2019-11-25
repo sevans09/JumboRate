@@ -37,10 +37,6 @@ app.get('/home', function(req, res) {
      res.render('pages/index');
 });
 
-app.get('/search', function(req, res) {
-     res.render('pages/search');
-});
-
 app.get('/search_result', function(req, res) {
      res.render('pages/search_result');
 });
@@ -69,6 +65,10 @@ app.get('/test', function(req, res) {
      res.render('pages/test');
 });
 
+app.get('/display_test', function(req, res) {
+     res.render('pages/display_test');
+});
+
 app.listen(port);
 console.log('Running at Port 5000');
 
@@ -88,23 +88,55 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 app.post('/submit-rating', (req, res) => {
-     console.log(req.body);
      postClass(req.body);
-     res.redirect('/about');
+     res.redirect('/about'); //change redirect later
      res.end();
 })
 
-function postClass(body) {
-     rating = Object.assign({}, body);
+function postClass(info) {
+     rating = Object.assign({}, info);
      delete rating.dep;
      delete rating.class_num;
-     firebase.database().ref('class/' + body.dep + '/' + body.class_num).push({
-         rating: rating
-     }, function(error) {
-         if (error) {
-              console.log("Error");
-         } else {
-              console.log("Success");
-         }
+     date = new Date(Date.now()).toLocaleString().split(',')[0];
+     firebase.database().ref('class/' + info.dep + '/' + info.class_num).push({
+          date: date,
+          rating: rating
+     },   function(error) {
+               if (error) {
+                    console.log("Error");
+               } else {
+                    console.log("Success");
+          }
      });
  }
+
+ app.post('/submit-display', (req, res) => {
+     // get_data(res, req.body);
+     var course = req.body;
+     var ref = firebase.database().ref("class/" + course.dep + "/" + course.class_num);
+
+     ref.on("value", function(snapshot) {
+          res.render('./pages/display_test', { ratings: snapshot.val()});
+          res.end();
+          }, function (errorObject) {
+          console.log("The read failed: " + errorObject.code);
+     }); 
+})
+
+app.get('/search', function(req, res) {
+     var ref = firebase.database().ref("class");
+
+     ref.on("value", function(snapshot) {
+          classes = snapshot.val();
+
+          departments = [];
+          for (const dep in classes) {
+               departments.push(dep);
+          }
+
+          res.render('pages/search', { classes: classes, data: departments});
+          res.end();
+          }, function (errorObject) {
+          console.log("The read failed: " + errorObject.code);
+     });
+});
