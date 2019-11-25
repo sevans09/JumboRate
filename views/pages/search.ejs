@@ -4,101 +4,33 @@
     <% include ../partials/header.ejs %>
     <title>Search</title>
 
-    <style>
-        div {
-            padding: 1% 1%;
-            font-size: 120%;
-        }
-        .button {
-            background-color: #654321;
-            border: none;
-            color: #ffffff;
-            padding: .5% 2%;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            border-radius: 5px;
-            font-family: 'Open Sans', sans-serif;
-            font-size: 100%;
-        }
-
-        .button:hover {
-            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-            cursor: pointer;
-        }
-    </style>
 </head>
 <body>
     <% include ../partials/nav.ejs %>
 
-    <script>
-        var data = {};
+    <main role="main" class="flex-shrink-0">
+        <div class="container" style="background-color: rgba(255, 255, 255, 0.8); padding: 2% 2%; margin-top: 2%">
+            <h1 class="head text-center">Search for a Class</h1>
+            <div class="col-5">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Select a Course Number
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">11</a>
+                        <a class="dropdown-item" href="#">15</a>
+                        <a class="dropdown-item" href="#">20</a>
+                        <a class="dropdown-item" href="#">40</a>
+                        <a class="dropdown-item" href="#">60</a>
+                    </div>
+                </div> 
+            </div>
 
-        $(document).ready(function() {
-            get_data(update_class_dep, update_class_num);
-        }); 
-
-        function get_data(update_class_num) {
-            var xhr = new XMLHttpRequest();
-            
-            xhr.onreadystatechange = function () {
-                if (this.readyState != 4) return;
-            
-                if (this.status == 200) {
-                    data = JSON.parse(this.responseText);
-                    update_class_dep();
-                }
-            };
-            
-            xhr.open('GET', '/classes', true);
-            xhr.send();
-        }
-
-        function update_class_num() {
-            var e = document.getElementById("select_dep_num");
-            var selected = e.options[e.selectedIndex].text;
-            var classes = Object.keys(data[selected]);
-            $("#select_class_num").html("");
-
-            classes.forEach(function(elem) {
-                if (elem != 0) {
-                    $("#select_class_num").append(`<option value="` + elem + `">` + elem+ `</option>`);
-                }
-            });
-        }
-
-        function update_class_dep() {
-            var classes = Object.keys(data);
-
-            $("#select_dep_num").html("");
-            classes.forEach(function(elem) {
-                $("#select_dep_num").append(`<option value="` + elem + `">` + elem+ `</option>`)
-            });
-            update_class_num();
-        }
-    </script>
-
-    <div class="container gray center">
-        <h1 class="head">Search for a Class</h1>
-        <div>Select a Department</div>
-        <div>
-            <select class="select" onchange="update_class_num()" id="select_dep_num" name="class_dep">
-                <option value="none"></option>
-            </select>
         </div>
+    </main>
 
-        <div>Select a Class Number</div>        
-        <div>
-            <select class="select" id="select_class_num" name="class_num">
-                <option value="none"></option>
-            </select>
-        </div>
-        <div>
-            <form action="search_result">
-                <button class="button" type="submit">Go</button>
-            </form>
-        </div>
-    </div>
+
     <% include ../partials/footer.ejs %>
+    
 </body>
 </html>

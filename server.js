@@ -144,10 +144,13 @@ app.get('/test_search', function(req, res) {
      queries = req.query;
      console.log("queries: ");
      console.log(req.query);
+     url = "class/" + queries.dep + "/" + queries.class_num;
+     console.log("url: " + url);
 
-     var ref = firebase.database().ref("class");
+     var ref = firebase.database().ref("class/" + queries.dep + "/" + queries.class_num);
 
      ref.on("value", function(snapshot) {
+          console.log(snapshot.val());
           res.json(snapshot.val());
           res.end();
           }, function (errorObject) {

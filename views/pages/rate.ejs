@@ -5,175 +5,22 @@
 	
     <title>Rate</title>
 
-    <style> 
-        .row {
-	      width: 100%;
-	      content: "";
-	      display: table;
-	      clear: both;
-	      text-align: center;
-	    }
-
-        .column {
-            float: left;
-            width: 30%;
-            margin: .5% 10%;
-        }
-
-        .col-sm {
-            width: 15%;
-        }
-
-        .col-md {
-            width: 20%;
-        }
-
-        .col-lg {
-            width: 29%;
-        }
-
-        .col-xlg {
-            width: 50%;
-        }
-
-        .row:after {
-            content: "";
-            display: table;
-            clear: both;
-        }
-
-        .select {
-            width: 20%;
-            margin: 0% 2%;
-        }
-
-        .value {
-            font-weight: bold;
-            font-size: 200%;
-        }
-    </style>
 </head>
 <body>
 	<% include ../partials/nav.ejs %>
-
-	<div class="container gray center">
-        <h1 class="head">Rate a Class</h1>
-        <hr size='2'/>
-        
-        <div class="container">
-		  <div class="row">
-		    <div class="col">
-		      <h3 class="head">Step 1: </h3>
-		    </div>
-
-		    <div class="col-3">
-		      <div class="dropdown">
-		          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		            Select a Department
-		          </button>
-		          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-		            <a class="dropdown-item" href="#">ENP</a>
-		            <a class="dropdown-item" href="#">COMP</a>
-		            <a class="dropdown-item" href="#">MATH</a>
-		            <a class="dropdown-item" href="#">EM</a>
-		            <a class="dropdown-item" href="#">PE</a>
-		          </div>
-		        </div> 
-		    </div>
-		    <div class="col-3">
-		      <div class="dropdown">
-		          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		            Select a Course Number
-		          </button>
-		          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-		            <a class="dropdown-item" href="#">11</a>
-		            <a class="dropdown-item" href="#">15</a>
-		            <a class="dropdown-item" href="#">20</a>
-		            <a class="dropdown-item" href="#">40</a>
-		            <a class="dropdown-item" href="#">60</a>
-		          </div>
-		        </div> 
-		    </div>
-		  </div>
+	<!-- Begin page content -->
+	<main role="main" class="flex-shrink-0">
+		<div class="dropdown">
+			<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
+			<span class="caret"></span></button>
+			<ul class="dropdown-menu">
+				<li><a href="#">HTML</a></li>
+				<li><a href="#">CSS</a></li>
+				<li><a href="#">JavaScript</a></li>
+			</ul>
 		</div>
+	  </main>
 
-
-		<div class="container">
-		  <div class="row">
-		    <div class="col">
-		      <h3 class="head">Step 2: </h3>
-		    </div>		
-
-		    
-		    <div class="col-5">
-		      <div class="dropdown">
-		          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		            Select a Course Number
-		          </button>
-		          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-		            <a class="dropdown-item" href="#">11</a>
-		            <a class="dropdown-item" href="#">15</a>
-		            <a class="dropdown-item" href="#">20</a>
-		            <a class="dropdown-item" href="#">40</a>
-		            <a class="dropdown-item" href="#">60</a>
-		          </div>
-		        </div> 
-		    </div>
-		  </div>
-		</div>
-
-
-		  <!-- <div class="row" style="border: solid 1px;">
-		    <div class="col" style="border: solid 1px;">
-		      1 of 3
-		    </div>
-		    <div class="col-5" style="border: solid 1px;">
-		      2 of 3 (wider)
-		    </div>
-		    <div class="col" style="border: solid 1px;">
-		      3 of 3
-		    </div>
-		  </div>
-		</div> -->
-
-
-
-
-
-        <form>
-			<div class="form-group">
-			    <label for="exampleInputEmail1">Email address</label>
-			    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-			    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-		  	</div>
-			
-			<div class="form-group">
-			<label for="exampleInputPassword1">Password</label>
-			<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-			</div>
-			
-			<div class="form-group form-check">
-			<input type="checkbox" class="form-check-input" id="exampleCheck1">
-			<label class="form-check-label" for="exampleCheck1">Check me out</label>
-			</div>
-
-			<button type="submit" class="btn btn-primary">Submit</button>
-
-		</form>
-
-
-
-
-
-
-
-
-
-
-
-
-
-    </div>
 
 
 	<% include ../partials/footer.ejs %>
