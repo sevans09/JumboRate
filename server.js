@@ -41,10 +41,6 @@ app.get('/search', function(req, res) {
      res.render('pages/search');
 });
 
-app.get('/search_result', function(req, res) {
-     res.render('pages/search_result');
-});
-
 app.get('/rate', function(req, res) {
      res.render('pages/rate');
 });
@@ -129,16 +125,14 @@ function postClass(info) {
 app.post('/submit-display2', (req, res) => {
      var course = req.body;
      res.render('./pages/display_test2', { dep: course.dep, class_num: course.class_num});
-
-     // var ref = firebase.database().ref("class/" + course.dep + "/" + course.class_num);
-
-     // ref.on("value", function(snapshot) {
-     //      res.render('./pages/display_test2', { dep: course.dep, class_num: course.class_num, ratings: snapshot.val()});
-     //      res.end();
-     //      }, function (errorObject) {
-     //           console.log("The read failed: " + errorObject.code);
-     // }); 
+     res.end();
 })
+
+app.post('/search_result', (req, res) => {
+     var course = req.body;
+     res.render('pages/search_result', { dep: course.dep, class_num: course.class_num});
+     res.end();
+});
 
 app.get('/test_search', function(req, res) {
      queries = req.query;

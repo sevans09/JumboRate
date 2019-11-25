@@ -6,10 +6,15 @@
 </head>
 <body>
     <% include ../partials/nav.ejs %>
+
+    <!-- Main Summary -->
     <main role="main" class="flex-shrink-0" style="padding-bottom: 5%">
             <div class="container" style="background-color: rgba(255, 255, 255, 0.8); padding: 2% 2%; margin-top: 2%">
                 <div class="container" style="padding-bottom: 5%">
-                    <h1 class="head text-center">COMP20: Web Programming</h1>
+                    <h1 class="head text-center">
+                        <span id="department"><%= dep %></span>
+                        <span id="class_num"><%= class_num %></span>
+                    </h1>
                     <div class="text-center" style="padding-top: 2%"><a class="btn-sm btn-primary" style="text-decoration: none;" href="rate">Rate this Class</a></div>
                 </div>
 
@@ -27,22 +32,23 @@
                     </div>
                     <div class="row">
                         <div id="difficulty" class="column col-lg value head">
-                            <h3>5.0</h3>
+                            <h3 id="avg_difficulty"></h3>
                         </div>
                         <div id="overall_rating" class="column col-lg value head" style="font-size: 500%">
-                            4.0 
+                            <span id="avg_overall"></span>
                         </div>
                         <div id="workload" class="column col-lg value head">
-                            <h3>3.0</h3>
+                            <h3 id="avg_workload"></h3>
                         </div>
                     </div>
                 </div>
             </div>
 
+            <!-- Filter & Sort Options -->
             <div class="row justify-content-center" style="padding: 2% 0%">
                 <div class="col-4 text-center" >
                     <label class="mr-sm-2" for="sort" style="color: #000">Sort By:</label> 
-                    <select class="select" name="sort" id="sort">
+                    <select class="select" name="sort" id="select_sort" style="width: 50%">
                         <option value="All">Date</option>
                         <option value="Low to High"> Rating; Low to High</option>
                         <option value="High to Low">Rating; High to Low</option>
@@ -50,61 +56,118 @@
                 </div>
                 <div class="col-4 text-center">
                     <label class="mr-sm-2" for="filter" style="color: #000">Filter by Professor:</label> 
-                    <select class="select" name="filter" id="filter">
+                    <select class="select" name="filter" id="select_filter" style="width: 50%">
                         <option value="All">All</option>
-                        <option value="Lisa D.">Lisa D.</option>
-                        <option value="Ming">Ming</option>
                     </select>
                 </div>
             </div>
 
-            <div class="container" style="background-color: rgba(57, 62, 65, 0.8); padding: 2% 2%;">
-                <div class="row head label white">11/19/2019</div>
-                <hr style="background-color:white">
-                <div class="row">
-                    <div class="col-3">
-                        <div class="white">
-                            <span>5.0</span> Overall Rating
-                        </div>
-                        <div class="white">
-                            <span>5.0</span> Difficulty
-                        </div>
-                        <div class="white">
-                            <span>5.0</span> Workload
-                        </div>
-                    </div>
-                    <div class="col-1.5 white">
-                        Professor: <br>
-                        Grade: <br> 
-                        Attendance:  
-                    </div>
-                    <div class="col-2 white">
-                        Ming <br>
-                        A <br> 
-                        Not Mandatory
-                    </div>
-                    <div class="col-5 white">
-                        I LOVED this class. Ming was amazing. It truly did change my life. I am now a professional 
-                        web programmer for Google, and honestly, I owe it all to COMP20 for introducing me to web 
-                        programming in a fun, low stress environment. Highly recommend this class to anyone at Tufts. 
-                    </div>
-                </div>
-            
-            </div>
+            <!-- Entry -->
+            <div id="display"></div>
+        </main>
 
-            <div class="container" style="background-color: rgba(35, 94, 164, 0.8); padding: 2% 2%;">
-                    <div class="row head label white">11/19/2019</div>
+    <% include ../partials/footer.ejs %>
+
+    <script>
+        var data = {};
+
+        $(document).ready(function() {
+            get_data(update_prof_filter);
+        }); 
+
+        function get_data(update_prof_filter) {
+            var dep = document.getElementById("department").innerHTML;
+            var class_num = document.getElementById("class_num").innerHTML;
+
+            var filter_select = document.getElementById("select_filter");
+            var filter = filter_select.options[filter_select.selectedIndex].text;
+
+            var sort_select = document.getElementById("select_sort");
+            var sort = sort_select.options[sort_select.selectedIndex].text;
+
+            var xhr = new XMLHttpRequest();
+            
+            xhr.onreadystatechange = function () {
+                if (this.readyState != 4) return;
+            
+                if (this.status == 200) {
+                    data = JSON.parse(this.responseText);
+                    console.log("display data: ");
+                    console.log(data);
+                    update_prof_filter();
+                    update_display();
+                }
+            };
+            url = "/test_search?" + "dep=" + dep + "&class_num=" + class_num + "&filter=" + filter + "&sort=" + sort;
+            xhr.open('GET', url, true);
+            xhr.send();
+        }
+
+        function update_prof_filter() {
+            console.log("update prof filter");
+
+            var ratings = Object.values(data);
+            profs = new Set();
+            ratings.forEach(elem => profs.add(elem.rating.prof));
+
+            profs.forEach(function(elem) {
+                $("#select_filter").append(`<option value="` + elem + `">` + elem + `</option>`)
+            });
+        }
+
+        function update_display() {
+            var ratings = Object.values(data);
+            var color1 = "(35, 94, 164, 0.8)";
+            var color2 = "(57, 62, 65, 0.8)";
+
+            var difficulty = new Number(0);
+            var overall = 0;
+            var workload = 0;
+            console.log(difficulty + " - " + overall + " - " + workload);
+
+            $("#display").html("");
+            ratings.forEach(function(elem, index) {
+                difficulty += parseInt(elem.rating.difficulty);
+                overall += parseInt(elem.rating.rating);
+                workload += parseInt(elem.rating.workload);
+
+                color = (index % 2 == 0) ? color1 : color2;
+                $("#display").append(display_html(elem, color));
+            });
+
+            total = ratings.length;
+            console.log(difficulty + " - " + overall + " - " + workload);
+
+            difficulty = (difficulty / total).toFixed(1);
+            overall = (overall / total).toFixed(1);
+            workload = (workload / total).toFixed(1);
+
+            console.log(difficulty + " - " + overall + " - " + workload);
+
+            console.log("size: " + total);
+
+            $("#avg_difficulty").html(difficulty);
+            $("#avg_overall").html(overall);
+            $("#avg_workload").html(workload);
+
+        }
+
+        function display_html(elem, color) {
+            var rating = elem.rating
+            return html = 
+            `<div class="container" style="background-color: rgba` + color + `; padding: 2% 2%;">
+                    <div class="row head label white">`+ elem.date + `</div>
                     <hr style="background-color:white">
                     <div class="row">
                         <div class="col-3">
                             <div class="white">
-                                <span>5.0</span> Overall Rating
+                                <span>` + rating.rating + `</span> Overall Rating
                             </div>
                             <div class="white">
-                                <span>5.0</span> Difficulty
+                                <span>` + rating.difficulty + `</span> Difficulty
                             </div>
                             <div class="white">
-                                <span>5.0</span> Workload
+                                <span>` + rating.workload + `</span> Workload
                             </div>
                         </div>
                         <div class="col-1.5 white">
@@ -113,25 +176,16 @@
                             Attendance:  
                         </div>
                         <div class="col-2 white">
-                            Ming <br>
-                            A <br> 
-                            Not Mandatory
+                            ` + rating.prof + `<br>
+                            ` + rating.grade + `<br> 
+                            ` + rating.attendance + `
                         </div>
                         <div class="col-5 white">
-                            I LOVED this class. Ming was amazing. It truly did change my life. I am now a professional 
-                            web programmer for Google, and honestly, I owe it all to COMP20 for introducing me to web 
-                            programming in a fun, low stress environment. Highly recommend this class to anyone at Tufts. 
+                            ` + rating.comments + `
                         </div>
                     </div>
-                
-                </div>
-
-
-        </main>
-
-
-
-
-    <% include ../partials/footer.ejs %>
+                </div>`
+        }
+    </script>
 </body>
 </html>

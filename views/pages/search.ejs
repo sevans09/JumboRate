@@ -12,25 +12,18 @@
         <div class="container" style="background-color: rgba(255, 255, 255, 0.8); padding: 2% 2%; margin-top: 2%">
             <h1 class="head text-center">Search for a Class</h1>
             
-            <form action="search_result">
+            <form action="/search_result" method="POST">
                 <div class="container text-center" style="padding: 2% 0 2% 0">
                     <h4 class="sub text-center">Select a department:</h4>
-                    <select class="custom-select my-1 mr-sm-2" id="select_dep_num" style="width: 20%">
+                    <select class="custom-select my-1 mr-sm-2" id="select_dep_num" name="dep" onchange="update_class_num()" style="width: 20%">
                         <option selected>Department</option>
-                        <option value="1">COMP</option>
-                        <option value="2">EM</option>
-                        <option value="3">PE</option>
                     </select>
                 </div>
 
                 <div class="container text-center" style="padding: 2% 0 2% 0">
                     <h4 class="sub text-center">Select a course number:</h4>
-                    <select class="custom-select my-1 mr-sm-2" id="select_class_num" style="width: 20%">
+                    <select class="custom-select my-1 mr-sm-2" id="select_class_num" name="class_num" style="width: 20%">
                         <option selected>Course Number</option>
-                        <option value="1">10</option>
-                        <option value="2">11</option>
-                        <option value="3">15</option>
-                        <option value="3">20</option>
                     </select>
                 </div>
 
