@@ -12,34 +12,21 @@
         <div class="container" style="background-color: rgba(255, 255, 255, 0.8); padding: 2% 2%; margin-top: 2%">
             <h1 class="head text-center">Search for a Class</h1>
             
-            <form>
-                
-            
+            <form action="search_result">
                 <div class="container text-center" style="padding: 2% 0 2% 0">
                     <h4 class="sub text-center">Select a department:</h4>
-                    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" style="width: 20%">
-                        <option selected>Department</option>
-                        <option value="1">COMP</option>
-                        <option value="2">EM</option>
-                        <option value="3">PE</option>
+                    <select class="custom-select my-1 mr-sm-2" id="select_dep_num" onchange="update_class_num()" style="width: 20%">
                     </select>
                 </div>
 
                 <div class="container text-center" style="padding: 2% 0 2% 0">
                     <h4 class="sub text-center">Select a course number:</h4>
-                    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" style="width: 20%">
-                        <option selected>Course Number</option>
-                        <option value="1">10</option>
-                        <option value="2">11</option>
-                        <option value="3">15</option>
-                        <option value="3">20</option>
+                    <select class="custom-select my-1 mr-sm-2" id="select_class_num" style="width: 20%">
                     </select>
                 </div>
 
                 <div class="container text-center" style="padding: 2% 0 2% 0">
-                    <form action="search_result">
-                            <button class="btn btn-primary go-btn" type="submit">Go</button>
-                    </form>
+                    <button class="btn btn-primary go-btn" type="submit">Go</button>
                 </div>
             </form>  
         </div>
@@ -48,5 +35,51 @@
 
     <% include ../partials/footer.ejs %>
     
+    <script>
+        var data = {};
+
+        $(document).ready(function() {
+            get_data(update_class_dep, update_class_num);
+        }); 
+
+        function get_data(update_class_num) {
+            var xhr = new XMLHttpRequest();
+            
+            xhr.onreadystatechange = function () {
+                if (this.readyState != 4) return;
+            
+                if (this.status == 200) {
+                    data = JSON.parse(this.responseText);
+                    update_class_dep();
+                }
+            };
+            
+            xhr.open('GET', '/classes', true);
+            xhr.send();
+        }
+
+        function update_class_num() {
+            var e = document.getElementById("select_dep_num");
+            var selected = e.options[e.selectedIndex].text;
+            var classes = Object.keys(data[selected]);
+            $("#select_class_num").html("");
+
+            classes.forEach(function(elem) {
+                if (elem != 0) {
+                    $("#select_class_num").append(`<option value="` + elem + `">` + elem+ `</option>`);
+                }
+            });
+        }
+
+        function update_class_dep() {
+            var classes = Object.keys(data);
+
+            $("#select_dep_num").html("");
+            classes.forEach(function(elem) {
+                $("#select_dep_num").append(`<option value="` + elem + `">` + elem+ `</option>`)
+            });
+            update_class_num();
+        }
+    </script>
 </body>
 </html>
