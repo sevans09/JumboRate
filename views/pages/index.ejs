@@ -7,10 +7,19 @@
 <body>
     <% include ../partials/nav.ejs %>
 
-    <div class="container center">
-        <a class="btn btn-light btn-lg" href="search" role="button">Search for a Class</a>
-        <a class="btn btn-light btn-lg" href="rate" role="button">Rate a Class</a>
-    </div>
+    <main role="main" class="flex-shrink-0" style="padding: 15% 0%">
+            <div class="container text-center">
+                    <div class="row">
+                        <div class="col-md">
+                            <a style="padding: 4% 10%; float: right" class="btn btn-light btn-lg" href="search" role="button">Search for a Class</a>
+                        </div>
+                        <div class="col-md">
+                            <a style="padding: 4% 14%; float: left" class="btn btn-light btn-lg" href="rate" role="button">Rate a Class</a>
+                        </div>
+                    </div>
+                </div>
+        </main>
+
 
     <% include ../partials/footer.ejs %>
 </body>

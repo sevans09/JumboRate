@@ -6,36 +6,64 @@
 </head>
 <body>
     <% include ../partials/nav.ejs %>
+    <main role="main" class="flex-shrink-0" style="padding-bottom: 5%">
+            <div class="container" style="background-color: rgba(255, 255, 255, 0.8); padding: 2% 2%; margin-top: 2%">
+                <div class="container" style="padding-bottom: 5%">
+                    <h1 class="head text-center">COMP20: Web Programming</h1>
+                    <div class="text-center" style="padding: 1% 0%"><a class="btn-sm btn-primary" style="text-decoration: none;" href="rate">Rate this Class</a></div>
+                </div>
 
-    <div class="container gray center">
-        <h1>COMP20: Web Programming</h1>
-        <a class="button" href="rate">Rate this Class</a>
-    </div>
+                <div class="container text-center">
+                    <div class="row">
+                        <div class="column col-lg sub">
+                            Difficulty 
+                        </div>
+                        <div class="column col-lg sub">
+                            Overall Rating
+                        </div>
+                        <div class="column col-lg">
+                            Workload
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div id="difficulty" class="column col-lg value head">
+                            <h3>5.0</h3>
+                        </div>
+                        <div id="overall_rating" class="column col-lg value head" style="font-size: 500%">
+                            4.0 
+                        </div>
+                        <div id="workload" class="column col-lg value head">
+                            <h3>3.0</h3>
+                        </div>
+                    </div>
+                </div>
+                 
+            </div>
+        </main>
 
-    <div class="container gray center">
-        <div class="row">
-            <div class="column col-lg">
-                Difficulty 
-            </div>
-            <div class="column col-lg">
-                Overall Rating
-            </div>
-            <div class="column col-lg">
-                Workload
-            </div>
-        </div>
-        <div class="row">
-            <div id="difficulty" class="column col-lg value">
-                5.0
-            </div>
-            <div id="overall_rating" class="column col-lg value" style="font-size: 500%">
-                4.0 
-            </div>
-            <div id="workload" class="column col-lg value">
-                3.0
-            </div>
-        </div>
-    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <div class="container gray center">
         <div class="row">
