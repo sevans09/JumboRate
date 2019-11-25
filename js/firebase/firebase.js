@@ -7,8 +7,8 @@ function getPosts() {
 
 		for (var postKey in posts) {
 			var post = posts[postKey];
-      console.log(post);
-      // Ideally prepend each post to a div so they are in most-recent order
+     			console.log(post);
+      			// Ideally prepend each post to a div so they are in most-recent order
 		}
 	});
 }
