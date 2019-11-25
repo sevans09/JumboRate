@@ -6,12 +6,19 @@ html, body {
     font-family: 'Open Sans', sans-serif;
 }
 
+.bg-primary {
+    background-color: #654321 !important;
+}
+
+.container {
+    background-color: #3F88C5;
+}
+
 @font-face {
     font-family: 'nevis';
-    src:  url('./fonts/nevis.ttf') format('truetype');
-/*     src:  url('./fonts/nevis.woff2') format('woff'),
-          url('./fonts/nevis.ttf') format('truetype'); */
+    src:  url('nevis.ttf') format('truetype');
 }
+
 .body {
     background-color: #3F88C5;
 }
@@ -24,25 +31,13 @@ html, body {
     font-family: 'nevis';
 }
 
-.header {
-    background-color: #654321;
-    padding: 2%;
-    color: #ffffff;
-    font-family: 'nevis';
-}
-
 .title {
     font-size: 2em;
     font-weight: bold;
     color: #ffffff;
-    text-decoration: none;
 }
 
 .footer {
-    text-align: center;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
     background-color: #654321;
     padding: .5%;
     color: white;
@@ -89,4 +84,3 @@ html, body {
     width: 10%;
     cursor: pointer;
   }
-
