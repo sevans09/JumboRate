@@ -4,59 +4,33 @@
     <% include ../partials/header.ejs %>
     <title>Search</title>
 
-    <style>
-        div {
-            padding: 1% 1%;
-            font-size: 120%;
-        }
-        .button {
-            background-color: #654321;
-            border: none;
-            color: #ffffff;
-            padding: .5% 2%;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            border-radius: 5px;
-            font-family: 'Open Sans', sans-serif;
-            font-size: 100%;
-        }
-
-        .button:hover {
-            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-            cursor: pointer;
-        }
-    </style>
 </head>
 <body>
     <% include ../partials/nav.ejs %>
 
-    <div class="container gray center">
-        <h1 class="head">Search for a Class</h1>
-        <div>Select a Department</div>
-        <div>
-            <select class="select" id="select_dep" name="class_dep">
-                <% data.forEach(function(elem) { %>
-                    <option value="elem"> <%=elem%> </option>
-                <% }); %>
-            </select>
-        </div>
+    <main role="main" class="flex-shrink-0">
+        <div class="container" style="background-color: rgba(255, 255, 255, 0.8); padding: 2% 2%; margin-top: 2%">
+            <h1 class="head text-center">Search for a Class</h1>
+            <div class="col-5">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Select a Course Number
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">11</a>
+                        <a class="dropdown-item" href="#">15</a>
+                        <a class="dropdown-item" href="#">20</a>
+                        <a class="dropdown-item" href="#">40</a>
+                        <a class="dropdown-item" href="#">60</a>
+                    </div>
+                </div> 
+            </div>
 
-        <div>Select a Class Number</div>        
-        <div>
-            <select class="select" name="class_num">
-                <option value="10">Select a class number</option>
-                <option value="20">20</option>
-                <option value="30">30</option>
-                <option value="40">40</option>
-            </select>
         </div>
-        <div>
-            <form action="search_result">
-                <button class="button" type="submit">Go</button>
-            </form>
-        </div>
-    </div>
+    </main>
+
+
     <% include ../partials/footer.ejs %>
+    
 </body>
 </html>

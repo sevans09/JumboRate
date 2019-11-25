@@ -1,39 +1,37 @@
-<script>
-  function expand_collapse() {
-    if($(".dropdown").css('display') == 'none') {
-      $(".dropdown").show("slow");
-    } else {
-      $(".dropdown").hide("slow");
-    } 
-  }
-</script>
+<!-- 
+  <script>
+      function expand_collapse() {
+        if($(".dropdown").css('display') == 'none') {
+          $(".dropdown").show("slow");
+        } else {
+          $(".dropdown").hide("slow");
+        } 
+      }
+    </script> -->
 
-
-<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-primary">
-    <a class="navbar-brand" href="home">Rate My Tufts Classes</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="search">Search for a Class</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="rate">Rate a Class</a>
-        </li>
-        <li class="nav-item">
-        </li>
-      </ul>
-      <div class="login_container" onClick="expand_collapse()">
-        <a> <img style="width:50%" src="profile_icon.png"></a>
-        <br> <br>
-          <div class="dropdown">   
-            <li><a onClick="signInWithPopup()" > Log In </a></li>
-            <li><a> Sign Out </a></li>
-          </div>
-      </div>
-    </div>
-</nav>
-
+<header>
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark sticky-top" style="background-color: #654321";>
+      <a class="navbar-brand" href="#">Rate My Tufts Classes</a>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="search">Search for a Class</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="rate">Rate a Class</a>
+            </li>
+            <li class="nav-item">
+            </li>
+          </ul>
+          <!-- <div class="login_container" onClick="expand_collapse()">
+            <a> <img style="width:30%" src="profile_icon.png"></a>
+            <br> <br>
+              <div class="dropdown">   
+                <li><a onClick="signInWithPopup()" > Log In </a></li>
+                <li><a> Sign Out </a></li>
+              </div>
+          </div> -->
+        </div>
+    </nav>
+  </header>
