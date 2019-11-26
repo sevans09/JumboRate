@@ -15,7 +15,7 @@
                     <span id="department"><%= dep %></span>
                     <span id="class_num"><%= class_num %></span>
                 </h1>
-                <div class="text-center" style="padding-top: 2%"><a class="btn-sm btn-primary" style="text-decoration: none;" href="rate">Rate this Class</a></div>
+                <div class="text-center" style="padding-top: 2%"><a class="btn-sm btn-primary" style="text-decoration: none;" href="rate?dep=<%= dep %>&class_num=<%= class_num %>">Rate this Class</a></div>
             </div>
 
             <div class="container text-center">
@@ -67,7 +67,7 @@
     </main>
 
     <% include ../partials/footer.ejs %>
-    
+
     <script>
         var url = "search_result.js";
         $.getScript(url);
