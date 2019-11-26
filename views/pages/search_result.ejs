@@ -48,10 +48,10 @@
             <div class="row justify-content-center" style="padding: 2% 0%">
                 <div class="col-4 text-center" >
                     <label class="mr-sm-2" for="sort" style="color: #000">Sort By:</label> 
-                    <select class="select" name="sort" id="select_sort" style="width: 50%">
-                        <option value="All">Date</option>
-                        <option value="Low to High"> Rating; Low to High</option>
-                        <option value="High to Low">Rating; High to Low</option>
+                    <select class="select" name="sort" id="select_sort" onchange="sort_data()" style="width: 50%">
+                        <option value="Date">Date</option>
+                        <option value="LtoH"> Rating; Low to High</option>
+                        <option value="HtoL">Rating; High to Low</option>
                     </select>
                 </div>
                 <div class="col-4 text-center">
@@ -76,15 +76,10 @@
         }); 
 
         function get_data(functionality = 0) {
-            console.log("get data");
             var dep = document.getElementById("department").innerHTML;
             var class_num = document.getElementById("class_num").innerHTML;
-
             var filter_select = document.getElementById("select_filter");
             var filter = filter_select.options[filter_select.selectedIndex].text;
-
-            var sort_select = document.getElementById("select_sort");
-            var sort = sort_select.options[sort_select.selectedIndex].text;
 
             var xhr = new XMLHttpRequest();
             
@@ -93,15 +88,14 @@
             
                 if (this.status == 200) {
                     data = JSON.parse(this.responseText);
-                    console.log("display data: ");
-                    console.log(data);
                     if (functionality) {
                         functionality();
                     }
+                    sort_data();
                     update_display();
                 }
             };
-            url = "/get_search_result?" + "dep=" + dep + "&class_num=" + class_num + "&filter=" + filter + "&sort=" + sort;
+            url = "/get_search_result?" + "dep=" + dep + "&class_num=" + class_num + "&filter=" + filter;
             xhr.open('GET', url, true);
             xhr.send();
         }
@@ -116,9 +110,36 @@
             });
         }
 
+        function sort_data() {
+            var sort_select = document.getElementById("select_sort");
+            var sort = sort_select.options[sort_select.selectedIndex].value;
+
+            var items = Object.keys(data).map(function(key) {
+                return [key, data[key]];
+            });
+            var list = [];
+
+            if (sort == "Date") {
+                list = items.sort(function(a, b) {
+                    date1 = new Date(a[1].date);
+                    date2 = new Date(b[1].date);
+                    return ((date1 > date2) ? -1 : 1);
+                });
+            } else if (sort == "LtoH") {
+                list = items.sort((a, b) => (a[1].overall > b[1].overall) ? 1 : -1);
+            } else if (sort == "HtoL") {
+                list = items.sort((a, b) => (a[1].overall > b[1].overall) ? -1 : 1);
+            } else {
+                list = items;
+            }
+
+            sorted_data = {}
+            list.forEach((val, index) => { sorted_data[val[0]] = val[1] });
+            data = sorted_data;
+            update_display();
+        }
+
         function update_display() {
-            console.log("data for update: ");
-            console.log(data);
             var ratings = Object.values(data);
             var color1 = "(35, 94, 164, 0.8)";
             var color2 = "(57, 62, 65, 0.8)";
@@ -151,7 +172,14 @@
         function display_html(rating, color) {
             return html = 
             `<div class="container" style="background-color: rgba` + color + `; padding: 2% 2%;">
-                    <div class="row head label white">`+ rating.date + `</div>
+                    <div class="row">
+                        <div class="col-3">
+                            <div class="white">
+                                ` + rating.term + ` ` + rating.year + `
+                                (` + rating.date + `)
+                            </div>
+                        </div>
+                    </div>
                     <hr style="background-color:white">
                     <div class="row">
                         <div class="col-3">

@@ -130,7 +130,7 @@ function postClass(info) {
      var course = req.body;
      var ref = firebase.database().ref("class/" + course.dep + "/" + course.class_num);
 
-     ref.on("value", function(snapshot) {
+     ref.once("value", function(snapshot) {
           res.render('./pages/display_test', { dep: course.dep, class_num: course.class_num, ratings: snapshot.val()});
           res.end();
           }, function (errorObject) {
@@ -153,25 +153,19 @@ app.post('/search_result', (req, res) => {
 // gets search results in database based on filter
 app.get('/get_search_result', function(req, res) {
      queries = req.query;
-     console.log("queries: ");
-     console.log(req.query);
      url = "class/" + queries.dep + "/" + queries.class_num;
-     console.log("url: " + url);
 
      var ref = firebase.database().ref("class/" + queries.dep + "/" + queries.class_num);
 
      if (queries.filter == "All") {
-          ref.on("value", function(snapshot) {
-               console.log(snapshot.val());
+          ref.once("value", function(snapshot) {
                res.json(snapshot.val());
                res.end();
                }, function (errorObject) {
                     console.log("The read failed: " + errorObject.code);
           });
      } else {
-          console.log("filter by prof");
-          ref.orderByChild("/prof").equalTo(queries.filter).on("value", function(snapshot) {
-               console.log(snapshot.val());
+          ref.orderByChild("/prof").equalTo(queries.filter).once("value", function(snapshot) {
                res.json(snapshot.val());
                res.end();
           });
@@ -183,10 +177,33 @@ app.get('/get_search_result', function(req, res) {
 app.get('/classes', function(req, res) {
      var ref = firebase.database().ref("class");
 
-     ref.on("value", function(snapshot) {
+     ref.once("value", function(snapshot) {
           res.json(snapshot.val());
           res.end();
           }, function (errorObject) {
                console.log("The read failed: " + errorObject.code);
      });
 });
+
+// update field: testing purposes only
+app.get('/update_field', (req, res) => {
+     url = "class/COMP/20/-Lu_WRo4baxR9Y87FFPH/date";
+     firebase.database().ref(url).set("6/5/2018");
+     res.end();
+});
+
+// js function to call /update_field
+// function update_field() {
+//      var xhr = new XMLHttpRequest();
+     
+//      xhr.onreadystatechange = function () {
+//          if (this.readyState != 4) return;
+     
+//          if (this.status == 200) {
+//              console.log("success");
+//          }
+//      };
+     
+//      xhr.open('GET', '/update_field', true);
+//      xhr.send();
+//  }
