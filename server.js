@@ -28,6 +28,10 @@ app.get('/profile_icon.png', function(req, res) {
      res.sendFile(path.join(__dirname, 'views/images/profile_icon.png'));
 });
 
+app.get('/departments_json', function(req, res) {
+     res.sendFile(path.join(__dirname, 'views/partials/departments.json'));
+});
+
 // Pages
 app.get('/', function(req, res) {
      res.render('pages/index');
@@ -91,7 +95,19 @@ app.post('/submit-rating', (req, res) => {
      postClass(req.body);
      res.redirect('/about'); //change redirect later
      res.end();
-})
+});
+
+app.post('/post_class', (req, res) => {
+     date = new Date(Date.now()).toLocaleString().split(',')[0];
+     rating = Object.assign({}, req.body);
+     delete rating.dep;
+     delete rating.class_num;
+     rating.date = date;
+
+     firebase.database().ref('class/' + req.body.dep + '/' + req.body.class_num).push(rating);
+     res.redirect('/home');
+     res.end();
+});
 
 function postClass(info) {
      rating = Object.assign({}, info);
@@ -134,7 +150,8 @@ app.post('/search_result', (req, res) => {
      res.end();
 });
 
-app.get('/test_search', function(req, res) {
+// gets search results in database based on filter
+app.get('/get_search_result', function(req, res) {
      queries = req.query;
      console.log("queries: ");
      console.log(req.query);
@@ -153,10 +170,10 @@ app.get('/test_search', function(req, res) {
           });
      } else {
           console.log("filter by prof");
-          ref.orderByChild("rating/prof").equalTo(queries.filter).on("value", function(snapshot) {
-            console.log(snapshot.val());
-            res.json(snapshot.val());
-            res.end();
+          ref.orderByChild("/prof").equalTo(queries.filter).on("value", function(snapshot) {
+               console.log(snapshot.val());
+               res.json(snapshot.val());
+               res.end();
           });
      }
 
