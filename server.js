@@ -11,7 +11,7 @@ app.set('view engine', 'ejs');
 
 /**********    ROUTES   **********/
 
-// Code
+// Style Files
 app.get('/styles.css', function(req, res) {
      res.sendFile(path.join(__dirname, 'public/stylesheets/styles.css'));
 });
@@ -20,10 +20,24 @@ app.get('/nevis.ttf', function(req, res) {
      res.sendFile(path.join(__dirname, '.fonts/nevis.ttf'));
 });
 
+// JavaScript Files
 app.get('/firebase.js', function(req, res) {
      res.sendFile(path.join(__dirname, 'js/firebase/firebase.js'));
 });
 
+app.get('/search.js', function(req, res) {
+     res.sendFile(path.join(__dirname, 'js/search.js'));
+});
+
+app.get('/search_result.js', function(req, res) {
+     res.sendFile(path.join(__dirname, 'js/search_result.js'));
+});
+
+app.get('/rate.js', function(req, res) {
+     res.sendFile(path.join(__dirname, 'js/rate.js'));
+});
+
+// Data Files
 app.get('/profile_icon.png', function(req, res) {
      res.sendFile(path.join(__dirname, 'views/images/profile_icon.png'));
 });
@@ -32,7 +46,7 @@ app.get('/departments_json', function(req, res) {
      res.sendFile(path.join(__dirname, 'views/partials/departments.json'));
 });
 
-// Pages
+// HTML Page Files
 app.get('/', function(req, res) {
      res.render('pages/index');
 });
