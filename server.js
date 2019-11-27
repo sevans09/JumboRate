@@ -1,3 +1,6 @@
+// server.js
+// Defines all requests 
+
 const express = require('express');
 const app = express();
 const path = require('path');
@@ -88,6 +91,7 @@ console.log('Running at Port 5000');
 
 /**********    FIREBASE DATABASE   **********/
 
+// Initalize database 
 var firebase = require('firebase');
 var firebaseConfig = {
      apiKey: "AIzaSyC9j40ZN83GVo9IfXUkyh8gmTdyyTlMHxM",
@@ -101,39 +105,45 @@ var firebaseConfig = {
    };
 firebase.initializeApp(firebaseConfig);
 
+// Add a class rating to database 
 app.post('/post_class', (req, res) => {
-     date = new Date(Date.now()).toLocaleString().split(',')[0];
      rating = Object.assign({}, req.body);
      delete rating.dep;
      delete rating.class_num;
+
+     // Add today's date to object 
+     date = new Date(Date.now()).toLocaleString().split(',')[0];
      rating.date = date;
 
+     // Post to class/department/class_num
      firebase.database().ref('class/' + req.body.dep + '/' + req.body.class_num).push(rating);
      res.redirect('/home?submit=true');
      res.end();
 });
 
+// Load search result page 
 app.post('/search_result', (req, res) => {
      var course = req.body;
+     // Add class code to parameters
      res.render('pages/search_result', { dep: course.dep, class_num: course.class_num});
      res.end();
 });
 
-// gets search results in database based on filter
+// Get search results from database (based on filter)
 app.get('/get_search_result', function(req, res) {
+     // Get class code from queries 
      queries = req.query;
      url = "class/" + queries.dep + "/" + queries.class_num;
-
      var ref = firebase.database().ref("class/" + queries.dep + "/" + queries.class_num);
 
      if (queries.filter == "All") {
+          // Get all ratings from class code
           ref.once("value", function(snapshot) {
                res.json(snapshot.val());
                res.end();
-               }, function (errorObject) {
-                    console.log("The read failed: " + errorObject.code);
           });
      } else {
+          // Get ratings from class code filtered by professor 
           ref.orderByChild("/prof").equalTo(queries.filter).once("value", function(snapshot) {
                res.json(snapshot.val());
                res.end();
@@ -142,26 +152,26 @@ app.get('/get_search_result', function(req, res) {
 
 });
 
-// gets all classes in the database
+// Get all ratings from database 
 app.get('/classes', function(req, res) {
      var ref = firebase.database().ref("class");
 
      ref.once("value", function(snapshot) {
           res.json(snapshot.val());
           res.end();
-          }, function (errorObject) {
-               console.log("The read failed: " + errorObject.code);
      });
 });
 
-// update field: testing purposes only
+// Functions for testing only 
+
+// Update Field 
 // app.get('/update_field', (req, res) => {
 //      url = "class/COMP/20/-Lu_WRo4baxR9Y87FFPH/date";
 //      firebase.database().ref(url).set("6/5/2018");
 //      res.end();
 // });
 
-// js function to call /update_field
+// js function to call /update_field (place in frontend js file)
 // function update_field() {
 //      var xhr = new XMLHttpRequest();
      
