@@ -79,14 +79,6 @@ app.get('/login', function(req, res) {
      res.render('pages/login');
 });
 
-app.get('/test', function(req, res) {
-     res.render('pages/test');
-});
-
-app.get('/display_test', function(req, res) {
-     res.render('pages/display_test');
-});
-
 app.listen(port);
 console.log('Running at Port 5000');
 
@@ -105,12 +97,6 @@ var firebaseConfig = {
    };
 firebase.initializeApp(firebaseConfig);
 
-app.post('/submit-rating', (req, res) => {
-     postClass(req.body);
-     res.redirect('/about'); //change redirect later
-     res.end();
-});
-
 app.post('/post_class', (req, res) => {
      date = new Date(Date.now()).toLocaleString().split(',')[0];
      rating = Object.assign({}, req.body);
@@ -122,41 +108,6 @@ app.post('/post_class', (req, res) => {
      res.redirect('/home');
      res.end();
 });
-
-function postClass(info) {
-     rating = Object.assign({}, info);
-     delete rating.dep;
-     delete rating.class_num;
-     date = new Date(Date.now()).toLocaleString().split(',')[0];
-     firebase.database().ref('class/' + info.dep + '/' + info.class_num).push({
-          date: date,
-          rating: rating
-     },   function(error) {
-               if (error) {
-                    console.log("Error");
-               } else {
-                    console.log("Success");
-          }
-     });
- }
-
- app.post('/submit-display', (req, res) => {
-     var course = req.body;
-     var ref = firebase.database().ref("class/" + course.dep + "/" + course.class_num);
-
-     ref.once("value", function(snapshot) {
-          res.render('./pages/display_test', { dep: course.dep, class_num: course.class_num, ratings: snapshot.val()});
-          res.end();
-          }, function (errorObject) {
-               console.log("The read failed: " + errorObject.code);
-     }); 
-})
-
-app.post('/submit-display2', (req, res) => {
-     var course = req.body;
-     res.render('./pages/display_test2', { dep: course.dep, class_num: course.class_num});
-     res.end();
-})
 
 app.post('/search_result', (req, res) => {
      var course = req.body;
@@ -200,11 +151,11 @@ app.get('/classes', function(req, res) {
 });
 
 // update field: testing purposes only
-app.get('/update_field', (req, res) => {
-     url = "class/COMP/20/-Lu_WRo4baxR9Y87FFPH/date";
-     firebase.database().ref(url).set("6/5/2018");
-     res.end();
-});
+// app.get('/update_field', (req, res) => {
+//      url = "class/COMP/20/-Lu_WRo4baxR9Y87FFPH/date";
+//      firebase.database().ref(url).set("6/5/2018");
+//      res.end();
+// });
 
 // js function to call /update_field
 // function update_field() {
