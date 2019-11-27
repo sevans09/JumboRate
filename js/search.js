@@ -27,6 +27,13 @@ function update_class_num() {
 
     classes.forEach(function(elem) {
         if (elem != 0) {
+            alert(typeof elem); //"string"
+            alert(elem);// "00005"
+
+            elem = +elem ; //or x= +"00005"; //do NOT confuse with x+=x, which will only concatenate the value
+            alert(typeof elem); //number , voila!
+            alert(elem); // 5 (as number)
+            
             $("#select_class_num").append(`<option value="` + elem + `">` + elem+ `</option>`);
         }
     });
