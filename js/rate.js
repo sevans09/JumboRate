@@ -38,12 +38,6 @@ function load_preset_class() {
         var class_num = pairs[1].split('=')[1];
 
         document.getElementById("dep").value = dep;
-        alert(typeof class_num); //"string"
-        alert(class_num);// "00005"
-
-        class_num = +class_num ; //or x= +"00005"; //do NOT confuse with x+=x, which will only concatenate the value
-        alert(typeof class_num); //number , voila!
-        alert(class_num); // 5 (as number)
         document.getElementById("class_num").value = class_num;
     }
 }
