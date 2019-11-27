@@ -25,6 +25,10 @@ app.get('/firebase.js', function(req, res) {
      res.sendFile(path.join(__dirname, 'js/firebase/firebase.js'));
 });
 
+app.get('/index.js', function(req, res) {
+     res.sendFile(path.join(__dirname, 'js/index.js'));
+});
+
 app.get('/search.js', function(req, res) {
      res.sendFile(path.join(__dirname, 'js/search.js'));
 });
@@ -105,7 +109,7 @@ app.post('/post_class', (req, res) => {
      rating.date = date;
 
      firebase.database().ref('class/' + req.body.dep + '/' + req.body.class_num).push(rating);
-     res.redirect('/home');
+     res.redirect('/home?submit=true');
      res.end();
 });
 
