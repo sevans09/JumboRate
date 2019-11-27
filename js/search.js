@@ -26,9 +26,7 @@ function update_class_num() {
     $("#select_class_num").html("");
 
     classes.forEach(function(elem) {
-        if (elem != 0) {
-            // Trims any leading zeros from the string
-            elem = +elem ; 
+        if (elem != 0) { 
             $("#select_class_num").append(`<option value="` + elem + `">` + elem+ `</option>`);
         }
     });
