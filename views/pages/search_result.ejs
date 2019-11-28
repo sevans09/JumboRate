@@ -1,3 +1,5 @@
+<!-- search_result.ejs -->
+
 <!doctype html>
 <html>
 
@@ -11,9 +13,11 @@
         <div class="container" style="background-color: rgba(255, 255, 255, 0.8); padding: 2% 2%; margin-top: 2%">
             <div class="container" style="padding-bottom: 5%">
                 <h1 class="head text-center">
+                    <!-- Department & Class Number Passed from Request -->
                     <span id="department"><%= dep %></span>
                     <span id="class_num"><%= class_num %></span>
                 </h1>
+                <!-- Pass in department & class number as parameters to request -->
                 <div class="text-center" style="padding-top: 2%"><a class="btn-sm btn-primary" style="text-decoration: none;" href="rate?dep=<%= dep %>&class_num=<%= class_num %>">Rate this Class</a></div>
             </div>
 
@@ -45,12 +49,12 @@
 
         <!-- Filter & Sort Options -->
         <div class="row justify-content-center" style="padding: 2% 0%">
-            <div class="col-4 text-center" >
+            <div class="col-4 text-center">
                 <label class="mr-sm-2" for="sort" style="color: #000">Sort By:</label> 
                 <select class="select" name="sort" id="select_sort" onchange="sort_data()" style="width: 50%">
                     <option value="Date">Date</option>
-                    <option value="LtoH"> Rating; Low to High</option>
-                    <option value="HtoL">Rating; High to Low</option>
+                    <option value="LtoH"> Rating: Low to High</option>
+                    <option value="HtoL">Rating: High to Low</option>
                 </select>
             </div>
             <div class="col-4 text-center">
@@ -61,7 +65,7 @@
             </div>
         </div>
 
-        <!-- Entry -->
+        <!-- Search Results -->
         <div id="display"></div>
     </main>
 
