@@ -1,3 +1,5 @@
+<!-- Home: index.ejs -->
+
 <!doctype html>
 <html>
 
@@ -6,23 +8,23 @@
 <body>
     <% include ../partials/nav.ejs %>
 
+    <!-- Main Link Buttons -->
     <main role="main" class="flex-shrink-0" style="padding: 15% 0%">
-            <div class="container text-center">
-                    <div class="row">
-                        <div class="col-md">
-                            <a style="padding: 4% 10%; float: right" class="btn btn-light btn-lg" href="search" role="button">Search for a Class</a>
-                        </div>
-                        <div class="col-md">
-                            <a style="padding: 4% 14%; float: left" class="btn btn-light btn-lg" href="rate" role="button">Rate a Class</a>
-                        </div>
-                    </div>
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-md">
+                    <a style="padding: 4% 10%; float: right" class="btn btn-light btn-lg" href="search" role="button">Search for a Class</a>
                 </div>
-        </main>
-
+                <div class="col-md">
+                    <a style="padding: 4% 14%; float: left" class="btn btn-light btn-lg" href="rate" role="button">Rate a Class</a>
+                </div>
+            </div>
+        </div>
+    </main>
 
     <% include ../partials/footer.ejs %>
       
-    <!-- Submission Modal -->
+    <!-- Submission Modal (Popup) -->
     <div class="modal fade" id="confirmation" tabindex="-1" role="dialog" aria-labelledby="confirmation" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
