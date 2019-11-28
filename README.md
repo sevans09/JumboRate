@@ -26,6 +26,7 @@ https://tufts-rate-my-classes.herokuapp.com
 
 ## Technologies
 - Frontend: JavaScript
-- Backend: Node.js
-- Database: MongoDB
-- API: 
+- Backend: Node.js, Express.js
+- Database: Firebase
+- API: Google Sign-in (Authentication)
+- Deployment: Heroku
