@@ -110,7 +110,9 @@ app.post('/post_class', (req, res) => {
      rating = Object.assign({}, req.body);
      delete rating.dep;
      delete rating.class_num;
-
+     alert(req.body.class_num);
+     req.body.class_num = +req.body.class_num;
+     alert(req.body.class_num);
      // Add today's date to object 
      date = new Date(Date.now()).toLocaleString().split(',')[0];
      rating.date = date;
