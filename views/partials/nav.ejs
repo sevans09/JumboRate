@@ -1,17 +1,3 @@
-<!-- nav.ejs -->
-<!-- Navigation bar for each page -->
-
-<!-- 
-  <script>
-      function expand_collapse() {
-        if($(".dropdown").css('display') == 'none') {
-          $(".dropdown").show("slow");
-        } else {
-          $(".dropdown").hide("slow");
-        } 
-      }
-    </script> -->
-
 <header>
     <nav class="navbar navbar-expand-md navbar-dark sticky-top" style="background-color: rgb(35, 94, 164)";>
         <a class="navbar-brand" href="home">Rate My Tufts Classes</a>
@@ -23,15 +9,18 @@
                 <li class="nav-item">
                     <a class="nav-link" href="rate">Rate a Class</a>
                 </li>
+                <li class="nav-item">
+                  <div class="dropdown">
+                      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <img src="profile_icon.png" style="height:30px;" >
+                    </button>
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#" id="login"> Log In </a>
+                        <a class="dropdown-item" href="#" id="signout"> Sign Out </a>
+                      </div>
+                    </div>
+                </li>
             </ul>
-            <!-- <div class="login_container" onClick="expand_collapse()">
-              <a> <img style="width:30%" src="profile_icon.png"></a>
-              <br> <br>
-                <div class="dropdown">   
-                  <li><a onClick="signInWithPopup()" > Log In </a></li>
-                  <li><a> Sign Out </a></li>
-                </div>
-            </div> -->
         </div>
     </nav>
 </header>
