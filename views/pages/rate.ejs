@@ -8,12 +8,33 @@
 <body>
 	<% include ../partials/nav.ejs %>
 
+	<!-- form validation -->
+	<script>
+		// JavaScript for disabling form submissions if there are invalid fields
+		(function() {
+			'use strict';
+			window.addEventListener('load', function() {
+			// Fetch all the forms we want to apply custom Bootstrap validation styles to
+			var forms = document.getElementsByClassName('needs-validation');
+			// Loop over them and prevent submission
+			var validation = Array.prototype.filter.call(forms, function(form) {
+				form.addEventListener('submit', function(event) {
+				if (form.checkValidity() === false) {
+					event.preventDefault();
+					event.stopPropagation();
+				}
+				form.classList.add('was-validated');
+				}, false);
+			});
+			}, false);
+		})();
+	</script>
+
 	<!-- Begin Page Content -->
 	<main role="main" class="flex-shrink-0">
 		<div class="container" style="background-color: rgba(255, 255, 255, 0.8); padding: 2% 2%; margin-top: 2%;  margin-bottom: 2%">
 			<h1 class="head text-center">Rate a Class</h1>
-			<form id="rating" action="/post_class" method="POST" novalidate>
-
+			<form class="needs-validation" id="rating" action="/post_class" method="POST" novalidate>
 			<div class="container">
 				<!-- Department -->
 				<div class="row">
@@ -42,6 +63,9 @@
 							<div class="container text-center" style="padding: 2% 0 2% 0">
 								<label class="mr-sm-2" for="class_num">Select a Course Number:</label>
 								<input name="class_num" type="text" class="form-control" id="class_num" style="width: 20%">
+							</div>
+							<div class="invalid-feedback">
+								Please choose a username.
 							</div>
 						</form-group> 
 					</div>
