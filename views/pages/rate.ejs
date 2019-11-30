@@ -60,6 +60,7 @@
 						</form-group> 
 					</div>
 				</div>
+				  
 
 				<!-- Course Number -->
 				<div class="row">
@@ -69,11 +70,13 @@
 					<div class="col-9">
 						<form-group>
 							<div class="container text-center" style="padding: 2% 0 2% 0">
-								<label class="mr-sm-2" for="class_num">Select a Course Number:</label>
-								<input name="class_num" type="text" class="form-control" id="class_num" style="width: 20%" required>
+								<label class="mr-sm-2 text-danger" for="class_num">Select a Course Number:</label>
+								<input name="class_num" type="text" class="form-control is-invalid" id="class_num" style="width: 20%" placeholder="160" required>
 							</div>
-							<div class="invalid-feedback">
-								Please input a course number.
+							<div class="col-sm-3">
+								<small id="classNumHelp" class="text-danger">
+								  Must be 1-3 digits.
+								</small>      
 							</div>
 						</form-group> 
 					</div>
