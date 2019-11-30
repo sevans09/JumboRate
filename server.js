@@ -45,6 +45,10 @@ app.get('/rate.js', function(req, res) {
 });
 
 // Data Files
+app.get('/tufts_logo.png', function(req, res) {
+     res.sendFile(path.join(__dirname, 'views/images/tufts_logo.png'));
+});
+
 app.get('/profile_icon.png', function(req, res) {
      res.sendFile(path.join(__dirname, 'views/images/profile_icon.png'));
 });
