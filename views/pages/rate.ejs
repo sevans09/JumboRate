@@ -19,6 +19,11 @@
 			// Loop over them and prevent submission
 			var validation = Array.prototype.filter.call(forms, function(form) {
 				form.addEventListener('submit', function(event) {
+				// If invalid class num (greater than 3 digits) do not allow submit
+				if (document.getElementById("class_num").value.length > 3) {
+					event.preventDefault();
+					event.stopPropagation();
+				}
 				if (form.checkValidity() === false) {
 					event.preventDefault();
 					event.stopPropagation();
