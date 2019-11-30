@@ -48,8 +48,13 @@
 
     .link {
         text-decoration: none;
-        color: #ffffff;
+        color: rgba(255,255,255,.5);
         padding: 2%; 
+    }
+
+    .link:hover {
+        text-decoration: none;
+        color: rgba(255,255,255,.75);
     }
 
     .footer > .container {
