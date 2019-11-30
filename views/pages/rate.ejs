@@ -45,9 +45,12 @@
 						<form-group>
 							<div class="container text-center" style="padding: 2% 0 2% 0">
 								<label class="mr-sm-2" for="department">Select a Department:</label>
-								<select name="dep" class="custom-select my-1 mr-sm-2" id="dep" style="width: 20%">
+								<select name="dep" class="custom-select my-1 mr-sm-2" id="dep" style="width: 20%" required>
 									<option selected>Select</option>
 								</select>
+							</div>
+							<div class="invalid-feedback">
+								Please input a course department.
 							</div>
 						</form-group> 
 					</div>
@@ -62,10 +65,10 @@
 						<form-group>
 							<div class="container text-center" style="padding: 2% 0 2% 0">
 								<label class="mr-sm-2" for="class_num">Select a Course Number:</label>
-								<input name="class_num" type="text" class="form-control" id="class_num" style="width: 20%">
+								<input name="class_num" type="text" class="form-control" id="class_num" style="width: 20%" required>
 							</div>
 							<div class="invalid-feedback">
-								Please choose a username.
+								Please input a course number.
 							</div>
 						</form-group> 
 					</div>
