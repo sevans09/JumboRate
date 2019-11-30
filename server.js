@@ -119,7 +119,7 @@ app.post('/post_class', (req, res) => {
      rating.date = date;
 
      // Post to class/department/class_num
-     firebase.database().ref('class/' + req.body.dep + '/' + req.body.class_num).push(rating);
+     firebase.database().ref('class/' + req.body.dep + '/' + +(req.body.class_num)).push(rating);
      res.redirect('/home?submit=true');
      res.end();
 });
