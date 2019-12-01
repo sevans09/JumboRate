@@ -33,7 +33,7 @@
 				if (courseNum.length > 3) {
 					// change class to form control is invalid
 					console.log("course num length is too long");
-					$("#class_num").removeClass("form-control");
+					// $("#class_num").removeClass("form-control");
 					$("#class_num").addClass("form-control is-invalid");
       				$("#invalidCourseCode").addClass('show') 
 					event.preventDefault();
@@ -48,6 +48,9 @@
 				else if (form.checkValidity() === false) {
 					event.preventDefault();
 					event.stopPropagation();
+				}
+				if (dep.length == 0) {
+					$("#invalidDept").addClass('show')
 				}
 				if (year.length == 0) {
 					$("#invalidDate").addClass('show') 
