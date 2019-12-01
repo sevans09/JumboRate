@@ -24,16 +24,22 @@
 				var dep = document.getElementById("dep").value;
 				var year = document.getElementById("year").value;
 				var term = document.getElementById("term").value;
+				var overall = document.getElementById("overall").value;
+				var difficulty = document.getElementById("difficulty").value;
+				var workload = document.getElementById("workload").value;
+				var prof = document.getElementById("prof").value;
+				var grade = document.getElementById("grade").value;
+				var attendance = document.getElementById("attendance").value;
 				if (courseNum.length > 3) {
 					// change class to form control is invalid
-					console.log("course num length is too short");
+					console.log("course num length is too long");
 					$("#class_num").removeClass("form-control");
 					$("#class_num").addClass("form-control is-invalid");
       				$("#invalidCourseCode").addClass('show') 
 					event.preventDefault();
 					event.stopPropagation();
 				}
-				if (courseNum.match(/^[0-9]+$/) != null) {
+				if (courseNum.match(/^[0-9]+$/) == null) {
 					console.log("letters in course num");
 					$("#invalidCourseCode").addClass('show') 
 					event.preventDefault();
@@ -44,14 +50,30 @@
 					event.stopPropagation();
 				}
 				if (year.length == 0) {
-					console.log("No dep selected");
-					$("#invalidDept").addClass('show') 
+					$("#invalidDate").addClass('show') 
 				}
 				if (term.length == 0) {
-					console.log("No dep selected");
-					$("#invalidDept").addClass('show') 
+					$("#invalidDate").addClass('show') 
 				}
-				invalidDate
+				if (overall.length == 0) {
+					$("#invalidOverall").addClass('show') 
+				}
+				if (difficulty.length == 0) {
+					$("#invalidDifficulty").addClass('show') 
+				}
+				if (workload.length == 0) {
+					$("#invalidWorkload").addClass('show') 
+				}
+				if (prof.length == 0) {
+					$("#prof").addClass('show') 
+				}
+				if (grade.length == 0) {
+					$("#grade").addClass('show') 
+				}
+				if (attendance.length == 0) {
+					$("#attendance").addClass('show') 
+				}
+
 				form.classList.add('was-validated');
 				}, false);
 			});
@@ -164,6 +186,12 @@
 									<option value="5">5-Awesome</option>
 								</select>
 							</div>
+							<div class="alert alert-danger alert-dismissible fade" role="alert" id="invalidOverall">
+								<strong>Please select an overall rating.</strong>
+								<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+								  <span aria-hidden="true">&times;</span>
+								</button>
+						 	</div>
 						</form-group> 
 					</div>
 				</div>
@@ -186,6 +214,12 @@
 									<option value="5">5–Hardest class I've ever taken</option>
 								</select>
 							</div>
+							<div class="alert alert-danger alert-dismissible fade" role="alert" id="invalidDifficulty">
+								<strong>Please select a difficulty rating.</strong>
+								<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+								  <span aria-hidden="true">&times;</span>
+								</button>
+						 	</div>
 						</form-group> 
 					</div>			
 				</div>
@@ -208,6 +242,12 @@
 									<option value="5">5–Hardest class I've ever taken</option>
 								</select>
 							</div>
+							<div class="alert alert-danger alert-dismissible fade" role="alert" id="invalidWorkload">
+								<strong>Please select a workload rating.</strong>
+								<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+								  <span aria-hidden="true">&times;</span>
+								</button>
+						 	</div>
 						</form-group> 
 					</div>			
 				</div>
@@ -224,7 +264,13 @@
 								<input name="prof" type="text" class="form-control" id="prof" style="width: 20%" required>
 							</div>
 						</form-group> 
-					</div>			
+					</div>
+					<div class="alert alert-danger alert-dismissible fade" role="alert" id="invalidProf">
+						<strong>Please input a professor.</strong>
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						  <span aria-hidden="true">&times;</span>
+						</button>
+					 </div>
 				</div>
 
 				<!-- Grade -->
@@ -258,6 +304,12 @@
 									<option value="Audit/No Grade">Audit/No Grade</option>
 								</select>
 							</div>
+							<div class="alert alert-danger alert-dismissible fade" role="alert" id="invalidGrade">
+								<strong>Please select a grade.</strong>
+								<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+								  <span aria-hidden="true">&times;</span>
+								</button>
+						 	</div>
 						</form-group> 
 					</div>			
 				</div>
@@ -277,6 +329,12 @@
 									<option value="Not Mandatory">Not Mandatory</option>
 								</select>
 							</div>
+							<div class="alert alert-danger alert-dismissible fade" role="alert" id="invalidAttendance">
+								<strong>Please select attendance.</strong>
+								<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+								  <span aria-hidden="true">&times;</span>
+								</button>
+						 	</div>
 						</form-group> 
 					</div>			
 				</div>
