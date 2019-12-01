@@ -19,7 +19,7 @@ $(document).ready(function ()
     {
         firebase.auth().onAuthStateChanged(user => {
                 if(!user) {
-                        window.location = 'login';
+                        window.location = 'login.ejs';
                 }
         });
     });
