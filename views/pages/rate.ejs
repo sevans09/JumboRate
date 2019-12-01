@@ -7,6 +7,16 @@
 
 <body>
 	<% include ../partials/nav.ejs %>
+	
+	<!-- redirect to login to make a rating -->
+	<script> 
+	    firebase.auth().onAuthStateChanged(user => {
+		      if(!user) {
+			window.location = 'login.html';
+		      }
+		      console.log(user);
+	     });
+	</script>
 
 	<!-- form validation -->
 	<script>
