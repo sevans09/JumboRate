@@ -21,8 +21,18 @@
 				form.addEventListener('submit', function(event) {
 				// If invalid class num (greater than 3 digits or not letters) do not allow submit
 				var courseNum = document.getElementById("class_num").value;
-				if (courseNum.length > 3 || courseNum.match(/^[0-9]+$/) != null) {
+				if (courseNum.length > 3) {
+					// change class to form control is invalid
+					console.log("course num length is too short");
+					$("#class_num").removeClass("form-control");
+					$("#class_num").addClass("form-control is-invalid");
       				$("#invalidCourseCode").addClass('show') 
+					event.preventDefault();
+					event.stopPropagation();
+				}
+				if (courseNum.match(/^[0-9]+$/) != null) {
+					console.log("letters in course num");
+					$("#invalidCourseCode").addClass('show') 
 					event.preventDefault();
 					event.stopPropagation();
 				}
