@@ -40,6 +40,10 @@
 					event.preventDefault();
 					event.stopPropagation();
 				}
+				if (dep.length == 0) {
+					console.log("No dep selected");
+					$("#invalidDept").addClass('show') 
+				}
 				form.classList.add('was-validated');
 				}, false);
 			});
@@ -63,12 +67,15 @@
 							<div class="container text-center" style="padding: 2% 0 2% 0">
 								<label class="mr-sm-2" for="department">Select a Department:</label>
 								<select name="dep" class="custom-select my-1 mr-sm-2" id="dep" style="width: 20%" required>
-									<option selected placeholder="Select"></option>
+									<option selected></option>
 								</select>
 							</div>
-							<div class="invalid-feedback">
-								Please input a course department.
-							</div>
+							<div class="alert alert-danger alert-dismissible fade" role="alert" id="invalidDept">
+								<strong>Please select a department.</strong>
+								<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+								  <span aria-hidden="true">&times;</span>
+								</button>
+						 	</div>
 						</form-group> 
 					</div>
 				</div>
