@@ -4,6 +4,7 @@
 <html>
 
 <% include ../partials/header.ejs %>
+<script src="click.js"></script>
 
 <body>
     <% include ../partials/nav.ejs %>
@@ -48,6 +49,16 @@
     <script>
         var url = "index.js";
         $.getScript(url);
+        
+        // TESTING
+        
+        firebase.auth().onAuthStateChanged(user => {
+        console.log(user);
+        if (user != null){
+              console.log(user.displayName);
+          }
+     });
+     
     </script>
 </body>
 </html>
