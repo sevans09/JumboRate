@@ -21,6 +21,9 @@
 				form.addEventListener('submit', function(event) {
 				// If invalid class num (greater than 3 digits or not letters) do not allow submit
 				var courseNum = document.getElementById("class_num").value;
+				var dep = document.getElementById("dep").value;
+				var year = document.getElementById("year").value;
+				var term = document.getElementById("term").value;
 				if (courseNum.length > 3) {
 					// change class to form control is invalid
 					console.log("course num length is too short");
@@ -40,10 +43,15 @@
 					event.preventDefault();
 					event.stopPropagation();
 				}
-				if (dep.length == 0) {
+				if (year.length == 0) {
 					console.log("No dep selected");
 					$("#invalidDept").addClass('show') 
 				}
+				if (term.length == 0) {
+					console.log("No dep selected");
+					$("#invalidDept").addClass('show') 
+				}
+				invalidDate
 				form.classList.add('was-validated');
 				}, false);
 			});
@@ -126,6 +134,12 @@
 									<option selected></option>
 								</select>
 							</div>
+							<div class="alert alert-danger alert-dismissible fade" role="alert" id="invalidDate">
+								<strong>Please enter a valid term and year.</strong>
+								<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+								  <span aria-hidden="true">&times;</span>
+								</button>
+						 	</div>
 						</form-group> 
 					</div>
 				</div>
