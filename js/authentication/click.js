@@ -7,7 +7,7 @@ $(document).ready(function ()
                         firebase.auth().signOut().then(function() {
                                 }, function(error) {
                         });
-                        window.location = 'index';
+                        window.location = 'home';
                 }
         });
     });
