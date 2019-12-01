@@ -44,6 +44,14 @@ app.get('/rate.js', function(req, res) {
      res.sendFile(path.join(__dirname, 'js/rate.js'));
 });
 
+app.get('/click.js', function(req, res) {
+     res.sendFile(path.join(__dirname, 'js/authentication/click.js'));
+});
+
+app.get('/login.js', function(req, res) {
+     res.sendFile(path.join(__dirname, 'js/authentication/login.js'));
+});
+
 // Data Files
 app.get('/tufts_logo.png', function(req, res) {
      res.sendFile(path.join(__dirname, 'views/images/tufts_logo.png'));
