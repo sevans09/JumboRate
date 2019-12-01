@@ -94,8 +94,8 @@ app.get('/contact', function(req, res) {
      res.render('pages/contact');
 });
 
-app.get('/login', function(req, res) {
-     res.render('pages/login');
+app.get('/login.ejs', function(req, res) {
+     res.render('pages/login.ejs');
 });
 
 app.listen(port);
