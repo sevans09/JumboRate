@@ -19,9 +19,10 @@
 			// Loop over them and prevent submission
 			var validation = Array.prototype.filter.call(forms, function(form) {
 				form.addEventListener('submit', function(event) {
-				// If invalid class num (greater than 3 digits) do not allow submit
-				if (document.getElementById("class_num").value.length > 3) {
-      				$("#buttonAlert").addClass('show') 
+				// If invalid class num (greater than 3 digits or not letters) do not allow submit
+				var courseNum = document.getElementById("class_num").value;
+				if (courseNum.length > 3 || courseNum.match(/^[0-9]+$/) != null) {
+      				$("#invalidCourseCode").addClass('show') 
 					event.preventDefault();
 					event.stopPropagation();
 				}
@@ -71,20 +72,15 @@
 					<div class="col-9">
 						<form-group>
 							<div class="container text-center" style="padding: 2% 0 2% 0">
-								<label class="mr-sm-2 text-danger" for="class_num">Enter a Course Number:</label>
+								<label class="mr-sm-2" for="class_num">Enter a Course Number:</label>
 								<input name="class_num" type="text" class="form-control" id="class_num" style="width: 20%" required>
 							</div>
-							<div class="alert alert-success alert-dismissible fade" role="alert" id="buttonAlert">
-								<strong>Success!</strong> You just showed an alert.
+							<div class="alert alert-danger alert-dismissible fade" role="alert" id="invalidCourseCode">
+								<strong>Please enter a valid course code.</strong>
 								<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 								  <span aria-hidden="true">&times;</span>
 								</button>
 						 	</div>
-							<div class="col-sm-3">
-								<small id="classNumHelp" class="text-danger">
-								  Must be 1-3 digits.
-								</small>      
-							</div>
 
 						</form-group> 
 					</div>
