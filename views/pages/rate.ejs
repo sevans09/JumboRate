@@ -41,17 +41,16 @@
 				var grade = document.getElementById("grade").value;
 				var attendance = document.getElementById("attendance").value;
 				if (courseNum.length > 3) {
-					// change class to form control is invalid
-					console.log("course num length is too long");
-					// $("#class_num").removeClass("form-control");
 					$("#class_num").addClass("form-control is-invalid");
-      				$("#invalidCourseCode").addClass('show') 
+      					$("#invalidCourseCode").addClass('show');
+					$('#invalidCourseCode').delay(5000).fadeOut('slow');
 					event.preventDefault();
 					event.stopPropagation();
 				}
 				if (courseNum.match(/^[0-9]+$/) == null) {
 					console.log("letters in course num");
-					$("#invalidCourseCode").addClass('show') 
+					$("#invalidCourseCode").addClass('show');
+					$('#invalidCourseCode').delay(5000).fadeOut('slow');
 					event.preventDefault();
 					event.stopPropagation();
 				}
@@ -60,31 +59,41 @@
 					event.stopPropagation();
 				}
 				if (dep.length == 0) {
-					$("#invalidDept").addClass('show')
+					$("#invalidDept").addClass('show');
+					$('#invalidDept').delay(5000).fadeOut('slow');
+					
 				}
 				if (year.length == 0) {
-					$("#invalidDate").addClass('show') 
+					$("#invalidDate").addClass('show');
+					$('#invalidDate').delay(5000).fadeOut('slow');
 				}
 				if (term.length == 0) {
-					$("#invalidDate").addClass('show') 
+					$("#invalidDate").addClass('show');
+					$('#invalidDate').delay(5000).fadeOut('slow');
 				}
 				if (overall.length == 0) {
-					$("#invalidOverall").addClass('show') 
+					$("#invalidOverall").addClass('show');
+					$('#invalidOverall').delay(5000).fadeOut('slow');
 				}
 				if (difficulty.length == 0) {
-					$("#invalidDifficulty").addClass('show') 
+					$("#invalidDifficulty").addClass('show');
+					$('#invalidDifficulty').delay(5000).fadeOut('slow');
 				}
 				if (workload.length == 0) {
-					$("#invalidWorkload").addClass('show') 
+					$("#invalidWorkload").addClass('show');
+					$('#invalidWorkload').delay(5000).fadeOut('slow');
 				}
 				if (prof.length == 0) {
-					$("#invalidProf").addClass('show') 
+					$("#invalidProf").addClass('show';
+					$('#invalidProf').delay(5000).fadeOut('slow');
 				}
 				if (grade.length == 0) {
-					$("#invalidGrade").addClass('show') 
+					$("#invalidGrade").addClass('show');
+					$('#invalidGrade').delay(5000).fadeOut('slow');
 				}
 				if (attendance.length == 0) {
-					$("#invalidAttendance").addClass('show') 
+					$("#invalidAttendance").addClass('show');
+					$('#invalidAttendance').delay(5000).fadeOut('slow');
 				}
 
 				form.classList.add('was-validated');
