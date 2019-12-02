@@ -41,7 +41,8 @@
     }
 
     .head {
-        font-family:'nevis';
+        font-family: 'Montserrat', sans-serif;
+        font-weight: bold;
     }
 
     .row {
