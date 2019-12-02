@@ -19,12 +19,6 @@
         font-size: 12px;
     }
 
-    /* .form-control {
-        margin: auto;
-        padding: auto;
-        display: block;
-    } */
-
     .blue {
         color: #3F88C5;
     }
@@ -42,7 +36,7 @@
 
     .head {
         font-family: 'Montserrat', sans-serif;
-        font-weight: bold;
+        font-weight: bolder;
     }
 
     .row {
