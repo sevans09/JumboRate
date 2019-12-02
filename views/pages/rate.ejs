@@ -105,278 +105,153 @@
 
 	<!-- Begin Page Content -->
 	<main role="main" class="flex-shrink-0">
-		<div class="container" style="background-color: rgba(255, 255, 255, 0.8); padding: 2% 2%; margin-top: 2%;  margin-bottom: 2%">
-			<h1 class="head text-center">Rate a Class</h1>
+		<div class="container" style="background-color: rgba(255, 255, 255, 0.8); padding: 2% 5%; margin-top: 2%;  margin-bottom: 2%">
+			<h1 class="head text-center brown" style="padding-bottom: 2%">Rate a Class</h1>
 			<form class="needs-validation" id="rating" action="/post_class" method="POST" novalidate>
 			<div class="container">
 				
-				<!-- Department -->
-				<div class="row">
-					<div class="col-3">
-						<h3 class="head blue" style="float: right; margin-top: 8%">Step 1: </h3>
+				<form>
+					<div class="row">
+						<h3 class="head blue" style="float: right;">Step 1: Select a Course</h3>
 					</div>
-					<div class="col-9">
-						<form-group>
-							<div class="container text-center" style="padding: 2% 0 2% 0">
-								<label class="mr-sm-2" for="department">Select a Department:</label>
-								<select name="dep" class="custom-select my-1 mr-sm-2" id="dep" style="width: 25%" required>
-									<option selected></option>
-								</select>
-							</div>
-							<div class="alert alert-danger alert-dismissible fade" role="alert" id="invalidDept">
-								<strong>Please select a department.</strong>
-								<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-								  <span aria-hidden="true">&times;</span>
-								</button>
-						 	</div>
-						</form-group> 
+					<div class="form-row">
+						<!-- DEPARTMENT -->
+						<div class="form-group col-md-6">
+							<label class="mr-sm-2 brown" for="department">Department:</label>
+							<select name="dep" class="form-control my-1 mr-sm-2" id="dep" style="width: 100%" required>
+								<option selected></option>
+							</select>
+						</div>
+						<!-- COURSE NUMBER -->
+						<div class="form-group col-md-6">
+							<label class="mr-sm-2 brown" for="class_num">Course Number:</label>
+							<input placeholder="e.g. 11 or 120" name="class_num" type="text" class="form-control" id="class_num" required>
+						</div>
 					</div>
-				</div>
-				  
 
-				<!-- Course Number -->
-				<div class="row">
-					<div class="col-3">
-						<h3 class="head blue" style="float: right; margin-top: 8%">Step 2: </h3>
+					<div class="form-row">
+						<!-- TERM -->
+						<div class="form-group col-md-6">
+							<label class="mr-sm-2" for="term">Term: </label>
+							<select name="term" class="form-control my-1 mr-sm-2" id="term" style="width: 100%" required>
+								<option selected></option>
+								<option value="Fall">Fall</option>
+								<option value="Spring">Spring</option>
+								<option value="Summer">Summer</option>
+							</select>
+						</div>
+						<!-- YEAR -->
+						<div class="form-group col-md-6">
+							<label class="mr-sm-2" for="year">Year: </label>
+							<select name="year" class="form-control my-1 mr-sm-2" id="year" style="width: 100%" required>
+								<option selected></option>
+							</select>
+						</div>
 					</div>
-					<div class="col-9">
-						<form-group>
-							<div class="container text-center" style="padding: 2% 0 2% 0; margin: 0 !important">
-								<label class="mr-sm-2" for="class_num">Enter a Course Number:</label>
-								<input placeholder="e.g. 11 or 011" name="class_num" type="text" class="form-control" id="class_num" style="width: 25%; margin: 0" required>
-							</div>
-							<div class="alert alert-danger alert-dismissible fade" role="alert" id="invalidCourseCode">
-								<strong>Please enter a valid course code.</strong>
-								<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-									<span aria-hidden="true">&times;</span>
-								</button>
-							</div>
-						</form-group> 
+					
+
+					<div class="row" style="margin-top: 5%">
+						<h3 class="head blue" style="float: right;">Step 2: Rate the Course</h3>
 					</div>
-				</div>
+					<div class="form-row">
+						<!-- OVERALL RATING -->
+						<div class="form-group col-md-4">
+							<label class="mr-sm-2" for="overall">Overall Course:</label>
+							<select name="overall" class="custom-select my-1 mr-sm-2" id="overall" style="width: 100%" required>
+								<option selected></option>
+								<option value="1">1–Terrible</option>
+								<option value="2">2-Mediocre</option>
+								<option value="3">3-Average</option>
+								<option value="4">4-Good</option>
+								<option value="5">5-Awesome</option>
+							</select>
+						</div>
+						<!-- DIFFICULTY -->
+						<div class="form-group col-md-4">
+							<label class="mr-sm-2" for="difficulty">Level of Difficulty:</label>
+							<select name="difficulty" class="custom-select my-1 mr-sm-2" id="difficulty" style="width: 100%" required>
+								<option selected></option>
+								<option value="1">1-I just have to show up to get an A</option>
+								<option value="2">2-Pretty Easy</option>
+								<option value="3">3-Hard, but manageable</option>
+								<option value="4">4-TOuGh</option>
+								<option value="5">5–Hardest class I've ever taken</option>
+							</select>
+						</div>
+
+						<!-- WORKLOAD -->
+						<div class="form-group col-md-4">
+							<label class="mr-sm-2" for="workload">Workload:</label>
+							<select name="workload" class="custom-select my-1 mr-sm-2" id="workload" style="width: 100%" required>
+								<option selected></option>
+								<option value="1">1-I just have to show up to get an A</option>
+								<option value="2">2-Pretty Easy</option>
+								<option value="3">3-Hard, but manageable</option>
+								<option value="4">4-TOuGh</option>
+								<option value="5">5–Hardest class I've ever taken</option>
+							</select>
+							</div>
+					</div>
+	
+
+					<div class="row" style="margin-top: 5%">
+						<h3 class="head blue" style="float: right;">Step 3: Specify Course Details</h3>
+					</div>
+					<div class="form-row">
+						<!-- PROFESSOR -->
+						<div class="form-group col-md-4">
+							<label class="mr-sm-2" for="prof">Professor:</label>
+							<input placeholder="e.g. Johnny Appleseed" name="prof" type="text" class="form-control" id="prof" style="width: 100%; margin: 0" required>
+						</div>
+						<!-- GRADE -->
+						<div class="form-group col-md-4">
+							<label class="mr-sm-2" for="grade">Grade Received:</label>
+							<select name="grade" class="custom-select my-1 mr-sm-2" id="grade" style="width: 100%" required>
+								<option selected></option>
+								<option value="A+">A+</option>
+								<option value="A">A</option>
+								<option value="A-">A-</option>
+								<option value="B+">B+</option>
+								<option value="B">B</option>
+								<option value="B-">B-</option>
+								<option value="C+">C+</option>
+								<option value="C">C</option>
+								<option value="C-">C-</option>
+								<option value="D+">D+</option>
+								<option value="D">D</option>
+								<option value="D-">D-</option>
+								<option value="F">F</option>
+								<option value="Drop/Withdrawal">Drop/Withdrawal</option>
+								<option value="Incomplete">Incomplete</option>
+								<option value="Not Sure Yet">Not Sure Yet</option>
+								<option value="Would Rather Not Say">Would Rather Not Say</option>
+								<option value="Audit/No Grade">Audit/No Grade</option>
+							</select>
+						</div>
+
+						<!-- ATTENDANCE -->
+						<div class="form-group col-md-4">
+							<label class="mr-sm-2" for="attendance">Attendance:</label>
+							<select name="attendance" class="custom-select my-1 mr-sm-2" id="attendance" style="width: 100%" required>
+								<option selected></option>
+								<option value="Mandatory">Mandatory</option>
+								<option value="Not Mandatory">Not Mandatory</option>
+							</select>
+						</div>
+					</div>
 
 
-				<!-- Date Taken -->
-				<div class="row">
-					<div class="col-3">
-						<h3 class="head blue" style="float: right; margin-top: 8%">Step 3: </h3>
+					<div class="row" style="margin-top: 5%">
+						<h3 class="head blue" style="float: right;">Step 4: Leave Some Constructive Comments</h3>
 					</div>
-					<div class="col-9">
-						<form-group>
-							<div class="container text-center" style="padding: 2% 0 2% 0">
-								<!-- Term -->
-								<label class="mr-sm-2" for="term">Term: </label>
-								<select name="term" class="custom-select my-1 mr-sm-2" id="term" style="width: 25%" required>
-									<option selected></option>
-									<option value="Fall">Fall</option>
-									<option value="Spring">Spring</option>
-									<option value="Summer">Summer</option>
-									<option value="Other">Other</option>
-								</select>
-								<!-- Year -->
-								<label class="mr-sm-2" for="year">Year: </label>
-								<select name="year" class="custom-select my-1 mr-sm-2" id="year" style="width: 25%" required>
-									<option selected></option>
-								</select>
-							</div>
-							<div class="alert alert-danger alert-dismissible fade" role="alert" id="invalidDate">
-								<strong>Please enter a valid term and year.</strong>
-								<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-								  <span aria-hidden="true">&times;</span>
-								</button>
-						 	</div>
-						</form-group> 
+					<div class="form-row">
+						<!-- COMMENTS -->
+						<div class="form-group col-md-12">
+							<label class="text-muted" for="comments">Please refrain from using harmful language.</label>
+							<textarea name="comments" style="width: 100%; margin: auto" class="form-control" id="comments" rows="3"></textarea>
+						</div>	
 					</div>
-				</div>
 
-				<!-- Number Ratings -->
-
-				<!-- Overall Rating -->
-				<div class="row">
-					<div class="col-3">
-						<h3 class="head blue" style="float: right; margin-top: 8%">Step 4: </h3>
-					</div>
-					<div class="col-9">
-						<form-group>
-							<div class="container text-center" style="padding: 2% 0 2% 0">
-								<label class="mr-sm-2" for="overall">Rate the Overall Course:</label>
-								<select name="overall" class="custom-select my-1 mr-sm-2" id="overall" style="width: 25%" required>
-									<option selected></option>
-									<option value="1">1–Terrible</option>
-									<option value="2">2-Mediocre</option>
-									<option value="3">3-Average</option>
-									<option value="4">4-Good</option>
-									<option value="5">5-Awesome</option>
-								</select>
-							</div>
-							<div class="alert alert-danger alert-dismissible fade" role="alert" id="invalidOverall">
-								<strong>Please select an overall rating.</strong>
-								<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-								  <span aria-hidden="true">&times;</span>
-								</button>
-						 	</div>
-						</form-group> 
-					</div>
-				</div>
-
-				<!-- Difficulty -->
-				<div class="row">
-					<div class="col-3">
-						<h3 class="head blue" style="float: right; margin-top: 8%">Step 5: </h3>
-					</div>
-					<div class="col-9">
-						<form-group>
-							<div class="container text-center" style="padding: 2% 0 2% 0">
-								<label class="mr-sm-2" for="difficulty">Rate the Level of Difficulty:</label>
-								<select name="difficulty" class="custom-select my-1 mr-sm-2" id="difficulty" style="width: 25%" required>
-									<option selected></option>
-									<option value="1">1-I just have to show up to get an A</option>
-									<option value="2">2-Pretty Easy</option>
-									<option value="3">3-Hard, but manageable</option>
-									<option value="4">4-TOuGh</option>
-									<option value="5">5–Hardest class I've ever taken</option>
-								</select>
-							</div>
-							<div class="alert alert-danger alert-dismissible fade" role="alert" id="invalidDifficulty">
-								<strong>Please select a difficulty rating.</strong>
-								<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-								  <span aria-hidden="true">&times;</span>
-								</button>
-						 	</div>
-						</form-group> 
-					</div>			
-				</div>
-
-				<!-- Workload -->
-				<div class="row">
-					<div class="col-3">
-						<h3 class="head blue" style="float: right; margin-top: 8%">Step 6: </h3>
-					</div>
-					<div class="col-9">
-						<form-group>
-							<div class="container text-center" style="padding: 2% 0 2% 0">
-								<label class="mr-sm-2" for="workload">Rate the Level of Work:</label>
-								<select name="workload" class="custom-select my-1 mr-sm-2" id="workload" style="width: 25%" required>
-									<option selected></option>
-									<option value="1">1-I just have to show up to get an A</option>
-									<option value="2">2-Pretty Easy</option>
-									<option value="3">3-Hard, but manageable</option>
-									<option value="4">4-TOuGh</option>
-									<option value="5">5–Hardest class I've ever taken</option>
-								</select>
-							</div>
-							<div class="alert alert-danger alert-dismissible fade" role="alert" id="invalidWorkload">
-								<strong>Please select a workload rating.</strong>
-								<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-								  <span aria-hidden="true">&times;</span>
-								</button>
-						 	</div>
-						</form-group> 
-					</div>			
-				</div>
-
-				<!-- Professor -->
-				<div class="row">
-					<div class="col-3">
-						<h3 class="head blue" style="float: right; margin-top: 8%">Step 7: </h3>
-					</div>
-					<div class="col-9">
-						<form-group>
-							<div class="container text-center" style="padding: 2% 0 2% 0">
-								<label class="mr-sm-2" for="prof">Enter the Professor:</label>
-								<input placeholder="Johnny Appleseed" name="prof" type="text" class="form-control" id="prof" style="width: 25%; margin: 0" required>
-							</div>
-						</form-group> 
-					</div>
-					<div class="alert alert-danger alert-dismissible fade" role="alert" id="invalidProf">
-						<strong>Please input a professor.</strong>
-						<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-						  <span aria-hidden="true">&times;</span>
-						</button>
-					 </div>
-				</div>
-
-				<!-- Grade -->
-				<div class="row">
-					<div class="col-3">
-						<h3 class="head blue" style="float: right; margin-top: 8%">Step 8: </h3>
-					</div>
-					<div class="col-9">
-						<form-group>
-							<div class="container text-center" style="padding: 2% 0 2% 0">
-								<label class="mr-sm-2" for="grade">Grade Received:</label>
-								<select name="grade" class="custom-select my-1 mr-sm-2" id="grade" style="width: 25%" required>
-									<option selected></option>
-									<option value="A+">A+</option>
-									<option value="A">A</option>
-									<option value="A-">A-</option>
-									<option value="B+">B+</option>
-									<option value="B">B</option>
-									<option value="B-">B-</option>
-									<option value="C+">C+</option>
-									<option value="C">C</option>
-									<option value="C-">C-</option>
-									<option value="D+">D+</option>
-									<option value="D">D</option>
-									<option value="D-">D-</option>
-									<option value="F">F</option>
-									<option value="Drop/Withdrawal">Drop/Withdrawal</option>
-									<option value="Incomplete">Incomplete</option>
-									<option value="Not Sure Yet">Not Sure Yet</option>
-									<option value="Would Rather Not Say">Would Rather Not Say</option>
-									<option value="Audit/No Grade">Audit/No Grade</option>
-								</select>
-							</div>
-							<div class="alert alert-danger alert-dismissible fade" role="alert" id="invalidGrade">
-								<strong>Please select a grade.</strong>
-								<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-								  <span aria-hidden="true">&times;</span>
-								</button>
-						 	</div>
-						</form-group> 
-					</div>			
-				</div>
-
-				<!-- Attendance -->
-				<div class="row">
-					<div class="col-3">
-						<h3 class="head blue" style="float: right; margin-top: 8%">Step 9: </h3>
-					</div>
-					<div class="col-9">
-						<form-group>
-							<div class="container text-center" style="padding: 2% 0 2% 0">
-								<label class="mr-sm-2" for="attendance">Attendance:</label>
-								<select name="attendance" class="custom-select my-1 mr-sm-2" id="attendance" style="width: 25%" required>
-									<option selected></option>
-									<option value="Mandatory">Mandatory</option>
-									<option value="Not Mandatory">Not Mandatory</option>
-								</select>
-							</div>
-							<div class="alert alert-danger alert-dismissible fade" role="alert" id="invalidAttendance">
-								<strong>Please select attendance.</strong>
-								<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-								  <span aria-hidden="true">&times;</span>
-								</button>
-						 	</div>
-						</form-group> 
-					</div>			
-				</div>
-
-				<!-- Comments -->
-				<div class="row">
-					<div class="col-3">
-						<h3 class="head blue" style="float: right; margin-top: 8%">Step 10: </h3>
-					</div>
-					<div class="col-9">
-						<form-group>
-							<div class="text-center form-group">
-								<label for="comments">Leave some <u>constructive</u> comments:</label>
-								<p class="text-muted"> Please refrain from using harmful language.</p>
-								<textarea name="comments" style="width: 80%; margin: auto" class="form-control" id="comments" rows="3"></textarea>
-							</div>
-						</form-group> 
-					</div>			
-				</div>
 
 				<!-- Submit Button -->
 				<div class="container text-center" style="padding: 2% 0 2% 0">

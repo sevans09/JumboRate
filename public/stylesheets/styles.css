@@ -19,11 +19,11 @@
         font-size: 12px;
     }
 
-    .form-control {
+    /* .form-control {
         margin: auto;
         padding: auto;
-        display: inline-block;
-    }
+        display: block;
+    } */
 
     .blue {
         color: #3F88C5;
