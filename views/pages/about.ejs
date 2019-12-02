@@ -9,12 +9,29 @@
 <body>
     <% include ../partials/nav.ejs %>
     
-    <div class="container gray">
-        <h1 class="center">About</h1>
-        <div class="left">
-            RateMyProfessors.com is the largest online destination for professor ratings. Users have added more than 19 million ratings, 1.7 million professors and over 7,500 schools to RateMyProfessors.com. User-generated content makes RateMyProfessors.com the highest trafficked site for quickly researching and rating professors, colleges and universities across the United States, Canada and the United Kingdom. More than 4 million college students each month are using Rate My Professors – join the fun!
-            Now, students can comment on and rate their school as well, by visiting their school's Rate My Professors page.
-            RateMyProfessors.com is built for college students, by college students. Choosing the best courses and professors is a rite of passage for every student, and connecting with peers on the site has become a key way for millions of students to navigate this process. The site does what students have been doing forever - checking in with each other – their friends, their brothers, their sisters, their classmates – to figure out who's a great professor and who's one you might want to avoid.
+    <div class="container" style="margin-top: 2%;">
+        <h1 class="head text-center">About</h1>
+        <div class="row" style="margin-top: 5%">
+            <div class="col-md-3">
+                <img src="../images/brooke.jpg" class="img-circle" alt="Brooke">
+            </div>	
+            <div class="col-md-3">
+                <img src="../images/sook.jpg" class="img-circle" alt="Sook-Hee">
+            </div>
+            <div class="col-md-3">
+                <label class="text-muted" for="comments">Please refrain from using harmful language.</label>
+                <textarea name="comments" style="width: 100%; margin: auto" class="form-control" id="comments" rows="3"></textarea>
+            </div>
+            <div class="col-md-3">
+                <label class="text-muted" for="comments">Please refrain from using harmful language.</label>
+                <textarea name="comments" style="width: 100%; margin: auto" class="form-control" id="comments" rows="3"></textarea>
+            </div>	
+        </div>
+
+        <div class="left" style="padding: 2%">
+            Hello! We are Nicole, Eli, Sook-Hee, and Brooke and together we have brought you this 
+            wonderful resource, "Rate my Tufts Classes." It's kind of like Rate my Professors, but 
+            only for Tufts classes, so you can see what your peers think of classes you want to take. 
         </div>
     </div>
 
