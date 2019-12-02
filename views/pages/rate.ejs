@@ -42,15 +42,15 @@
 				var attendance = document.getElementById("attendance").value;
 				if (courseNum.length > 3) {
 					$("#class_num").addClass("form-control is-invalid");
-      					$("#invalidCourseCode").addClass('show');
-					$('#invalidCourseCode').delay(5000).fadeOut('slow');
+      				$("#invalidInput").addClass('show');
+					$('#invalidInput').delay(5000).fadeOut('slow');
 					event.preventDefault();
 					event.stopPropagation();
 				}
 				if (courseNum.match(/^[0-9]+$/) == null) {
 					console.log("letters in course num");
-					$("#invalidCourseCode").addClass('show');
-					$('#invalidCourseCode').delay(5000).fadeOut('slow');
+					$("#invalidInput").addClass('show');
+					$('#invalidInput').delay(5000).fadeOut('slow');
 					event.preventDefault();
 					event.stopPropagation();
 				}
@@ -59,41 +59,41 @@
 					event.stopPropagation();
 				}
 				if (dep.length == 0) {
-					$("#invalidDept").addClass('show');
-					$('#invalidDept').delay(5000).fadeOut('slow');
+					$("#invalidInput").addClass('show');
+					$('#invalidInput').delay(5000).fadeOut('slow');
 					
 				}
 				if (year.length == 0) {
-					$("#invalidDate").addClass('show');
-					$('#invalidDate').delay(5000).fadeOut('slow');
+					$("#invalidInput").addClass('show');
+					$('#invalidInput').delay(5000).fadeOut('slow');
 				}
 				if (term.length == 0) {
-					$("#invalidDate").addClass('show');
-					$('#invalidDate').delay(5000).fadeOut('slow');
+					$("#invalidInput").addClass('show');
+					$('#invalidInput').delay(5000).fadeOut('slow');
 				}
 				if (overall.length == 0) {
-					$("#invalidOverall").addClass('show');
-					$('#invalidOverall').delay(5000).fadeOut('slow');
+					$("#invalidInput").addClass('show');
+					$('#invalidInput').delay(5000).fadeOut('slow');
 				}
 				if (difficulty.length == 0) {
-					$("#invalidDifficulty").addClass('show');
-					$('#invalidDifficulty').delay(5000).fadeOut('slow');
+					$("#invalidInput").addClass('show');
+					$('#invalidInput').delay(5000).fadeOut('slow');
 				}
 				if (workload.length == 0) {
-					$("#invalidWorkload").addClass('show');
-					$('#invalidWorkload').delay(5000).fadeOut('slow');
+					$("#invalidInput").addClass('show');
+					$('#invalidInput').delay(5000).fadeOut('slow');
 				}
 				if (prof.length == 0) {
-					$("#invalidProf").addClass('show');
-					$('#invalidProf').delay(5000).fadeOut('slow');
+					$("#invalidInput").addClass('show');
+					$('#invalidInput').delay(5000).fadeOut('slow');
 				}
 				if (grade.length == 0) {
-					$("#invalidGrade").addClass('show');
-					$('#invalidGrade').delay(5000).fadeOut('slow');
+					$("#invalidInput").addClass('show');
+					$('#invalidInput').delay(5000).fadeOut('slow');
 				}
 				if (attendance.length == 0) {
-					$("#invalidAttendance").addClass('show');
-					$('#invalidAttendance').delay(5000).fadeOut('slow');
+					$("#invalidInput").addClass('show');
+					$('#invalidInput').delay(5000).fadeOut('slow');
 				}
 
 				form.classList.add('was-validated');
@@ -107,11 +107,16 @@
 	<main role="main" class="flex-shrink-0">
 		<div class="container" style="background-color: rgba(255, 255, 255, 0.8); padding: 2% 2%; margin-top: 2%;  margin-bottom: 2%">
 			<h1 class="head text-center">Rate a Class</h1>
-			<form class="needs-validation" id="rating" action="/post_class" method="POST" novalidate>
+            <form class="needs-validation" id="rating" action="/post_class" method="POST" novalidate>
+            <div class="alert alert-danger alert-dismissible fade" role="alert" id="invalidInput">
+                <strong>Please enter valid input.</strong>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
 			<div class="container">
-				
 				<!-- Department -->
 				<div class="row">
+                    </div>
 					<div class="col-3">
 						<h3 class="head blue" style="float: right; margin-top: 8%">Step 1: </h3>
 					</div>
@@ -119,16 +124,10 @@
 						<form-group>
 							<div class="container text-center" style="padding: 2% 0 2% 0">
 								<label class="mr-sm-2" for="department">Select a Department:</label>
-								<select name="dep" class="custom-select my-1 mr-sm-2" id="dep" style="width: 25%" required>
+								<select name="dep" class="custom-select my-1 mr-sm-2" id="dep" style="width: 20%" required>
 									<option selected></option>
 								</select>
 							</div>
-							<div class="alert alert-danger alert-dismissible fade" role="alert" id="invalidDept">
-								<strong>Please select a department.</strong>
-								<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-								  <span aria-hidden="true">&times;</span>
-								</button>
-						 	</div>
 						</form-group> 
 					</div>
 				</div>
@@ -141,20 +140,13 @@
 					</div>
 					<div class="col-9">
 						<form-group>
-							<div class="container text-center" style="padding: 2% 0 2% 0; margin: 0 !important">
+							<div class="container text-center" style="padding: 2% 0 2% 0">
 								<label class="mr-sm-2" for="class_num">Enter a Course Number:</label>
-								<input placeholder="e.g. 11 or 011" name="class_num" type="text" class="form-control" id="class_num" style="width: 25%; margin: 0" required>
-							</div>
-							<div class="alert alert-danger alert-dismissible fade" role="alert" id="invalidCourseCode">
-								<strong>Please enter a valid course code.</strong>
-								<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-									<span aria-hidden="true">&times;</span>
-								</button>
+								<input name="class_num" type="text" class="form-control" id="class_num" style="width: 20%" required>
 							</div>
 						</form-group> 
 					</div>
 				</div>
-
 
 				<!-- Date Taken -->
 				<div class="row">
@@ -166,7 +158,7 @@
 							<div class="container text-center" style="padding: 2% 0 2% 0">
 								<!-- Term -->
 								<label class="mr-sm-2" for="term">Term: </label>
-								<select name="term" class="custom-select my-1 mr-sm-2" id="term" style="width: 25%" required>
+								<select name="term" class="custom-select my-1 mr-sm-2" id="term" style="width: 20%" required>
 									<option selected></option>
 									<option value="Fall">Fall</option>
 									<option value="Spring">Spring</option>
@@ -175,16 +167,10 @@
 								</select>
 								<!-- Year -->
 								<label class="mr-sm-2" for="year">Year: </label>
-								<select name="year" class="custom-select my-1 mr-sm-2" id="year" style="width: 25%" required>
+								<select name="year" class="custom-select my-1 mr-sm-2" id="year" style="width: 20%" required>
 									<option selected></option>
 								</select>
 							</div>
-							<div class="alert alert-danger alert-dismissible fade" role="alert" id="invalidDate">
-								<strong>Please enter a valid term and year.</strong>
-								<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-								  <span aria-hidden="true">&times;</span>
-								</button>
-						 	</div>
 						</form-group> 
 					</div>
 				</div>
@@ -200,7 +186,7 @@
 						<form-group>
 							<div class="container text-center" style="padding: 2% 0 2% 0">
 								<label class="mr-sm-2" for="overall">Rate the Overall Course:</label>
-								<select name="overall" class="custom-select my-1 mr-sm-2" id="overall" style="width: 25%" required>
+								<select name="overall" class="custom-select my-1 mr-sm-2" id="overall" style="width: 20%" required>
 									<option selected></option>
 									<option value="1">1–Terrible</option>
 									<option value="2">2-Mediocre</option>
@@ -209,12 +195,6 @@
 									<option value="5">5-Awesome</option>
 								</select>
 							</div>
-							<div class="alert alert-danger alert-dismissible fade" role="alert" id="invalidOverall">
-								<strong>Please select an overall rating.</strong>
-								<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-								  <span aria-hidden="true">&times;</span>
-								</button>
-						 	</div>
 						</form-group> 
 					</div>
 				</div>
@@ -228,7 +208,7 @@
 						<form-group>
 							<div class="container text-center" style="padding: 2% 0 2% 0">
 								<label class="mr-sm-2" for="difficulty">Rate the Level of Difficulty:</label>
-								<select name="difficulty" class="custom-select my-1 mr-sm-2" id="difficulty" style="width: 25%" required>
+								<select name="difficulty" class="custom-select my-1 mr-sm-2" id="difficulty" style="width: 20%" required>
 									<option selected></option>
 									<option value="1">1-I just have to show up to get an A</option>
 									<option value="2">2-Pretty Easy</option>
@@ -237,12 +217,6 @@
 									<option value="5">5–Hardest class I've ever taken</option>
 								</select>
 							</div>
-							<div class="alert alert-danger alert-dismissible fade" role="alert" id="invalidDifficulty">
-								<strong>Please select a difficulty rating.</strong>
-								<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-								  <span aria-hidden="true">&times;</span>
-								</button>
-						 	</div>
 						</form-group> 
 					</div>			
 				</div>
@@ -256,7 +230,7 @@
 						<form-group>
 							<div class="container text-center" style="padding: 2% 0 2% 0">
 								<label class="mr-sm-2" for="workload">Rate the Level of Work:</label>
-								<select name="workload" class="custom-select my-1 mr-sm-2" id="workload" style="width: 25%" required>
+								<select name="workload" class="custom-select my-1 mr-sm-2" id="workload" style="width: 20%" required>
 									<option selected></option>
 									<option value="1">1-I just have to show up to get an A</option>
 									<option value="2">2-Pretty Easy</option>
@@ -265,12 +239,6 @@
 									<option value="5">5–Hardest class I've ever taken</option>
 								</select>
 							</div>
-							<div class="alert alert-danger alert-dismissible fade" role="alert" id="invalidWorkload">
-								<strong>Please select a workload rating.</strong>
-								<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-								  <span aria-hidden="true">&times;</span>
-								</button>
-						 	</div>
 						</form-group> 
 					</div>			
 				</div>
@@ -283,17 +251,11 @@
 					<div class="col-9">
 						<form-group>
 							<div class="container text-center" style="padding: 2% 0 2% 0">
-								<label class="mr-sm-2" for="prof">Enter the Professor:</label>
-								<input placeholder="Johnny Appleseed" name="prof" type="text" class="form-control" id="prof" style="width: 25%; margin: 0" required>
+								<label class="mr-sm-2" for="prof">Professor:</label>
+								<input name="prof" type="text" class="form-control" id="prof" style="width: 20%" required>
 							</div>
 						</form-group> 
 					</div>
-					<div class="alert alert-danger alert-dismissible fade" role="alert" id="invalidProf">
-						<strong>Please input a professor.</strong>
-						<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-						  <span aria-hidden="true">&times;</span>
-						</button>
-					 </div>
 				</div>
 
 				<!-- Grade -->
@@ -305,7 +267,7 @@
 						<form-group>
 							<div class="container text-center" style="padding: 2% 0 2% 0">
 								<label class="mr-sm-2" for="grade">Grade Received:</label>
-								<select name="grade" class="custom-select my-1 mr-sm-2" id="grade" style="width: 25%" required>
+								<select name="grade" class="custom-select my-1 mr-sm-2" id="grade" style="width: 20%" required>
 									<option selected></option>
 									<option value="A+">A+</option>
 									<option value="A">A</option>
@@ -327,12 +289,6 @@
 									<option value="Audit/No Grade">Audit/No Grade</option>
 								</select>
 							</div>
-							<div class="alert alert-danger alert-dismissible fade" role="alert" id="invalidGrade">
-								<strong>Please select a grade.</strong>
-								<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-								  <span aria-hidden="true">&times;</span>
-								</button>
-						 	</div>
 						</form-group> 
 					</div>			
 				</div>
@@ -346,18 +302,12 @@
 						<form-group>
 							<div class="container text-center" style="padding: 2% 0 2% 0">
 								<label class="mr-sm-2" for="attendance">Attendance:</label>
-								<select name="attendance" class="custom-select my-1 mr-sm-2" id="attendance" style="width: 25%" required>
+								<select name="attendance" class="custom-select my-1 mr-sm-2" id="attendance" style="width: 20%" required>
 									<option selected></option>
 									<option value="Mandatory">Mandatory</option>
 									<option value="Not Mandatory">Not Mandatory</option>
 								</select>
 							</div>
-							<div class="alert alert-danger alert-dismissible fade" role="alert" id="invalidAttendance">
-								<strong>Please select attendance.</strong>
-								<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-								  <span aria-hidden="true">&times;</span>
-								</button>
-						 	</div>
 						</form-group> 
 					</div>			
 				</div>
