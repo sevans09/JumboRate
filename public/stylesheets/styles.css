@@ -19,6 +19,16 @@
         font-size: 12px;
     }
 
+    .head {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: bolder;
+        color: #654321;
+    }
+
+    .sub {
+        font-family: 'Open Sans', sans-serif;
+    }
+
     .blue {
         color: #3F88C5;
     }
@@ -32,21 +42,11 @@
     }
     .brown {
         color: #654321;
-    }
-
-    .head {
-        font-family: 'Montserrat', sans-serif;
-        font-weight: bolder;
-    }
+    } 
 
     .row {
         padding: .5% 0 .5% 0;
     }
-
-    .sub {
-        font-family: 'Open Sans', sans-serif;
-    }
-
     .link {
         text-decoration: none;
         color: rgba(255,255,255,.5);
