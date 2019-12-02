@@ -107,15 +107,15 @@
 	<main role="main" class="flex-shrink-0">
 		<div class="container" style="background-color: rgba(255, 255, 255, 0.8); padding: 2% 2%; margin-top: 2%;  margin-bottom: 2%">
 			<h1 class="head text-center">Rate a Class</h1>
-			<form class="needs-validation" id="rating" action="/post_class" method="POST" novalidate>
+            <form class="needs-validation" id="rating" action="/post_class" method="POST" novalidate>
+            <div class="alert alert-danger alert-dismissible fade" role="alert" id="invalidInput">
+                <strong>Please enter valid input.</strong>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
 			<div class="container">
 				<!-- Department -->
 				<div class="row">
-                    <div class="alert alert-danger alert-dismissible fade" role="alert" id="invalidInput">
-                        <strong>Please enter valid input.</strong>
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
                     </div>
 					<div class="col-3">
 						<h3 class="head blue" style="float: right; margin-top: 8%">Step 1: </h3>
