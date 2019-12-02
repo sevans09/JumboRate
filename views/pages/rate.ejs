@@ -14,6 +14,7 @@
 		      if(!user) {
 			window.location = 'login.ejs';
 		      }
+		      console.log(user);
 	     });
 	</script>
 
@@ -143,6 +144,13 @@
 								<label class="mr-sm-2" for="class_num">Enter a Course Number:</label>
 								<input name="class_num" type="text" class="form-control" id="class_num" style="width: 20%" required>
 							</div>
+							<div class="alert alert-danger alert-dismissible fade" role="alert" id="invalidCourseCode">
+								<strong>Please enter a valid course code.</strong>
+								<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+								  <span aria-hidden="true">&times;</span>
+								</button>
+						 	</div>
+
 						</form-group> 
 					</div>
 				</div>
@@ -170,6 +178,12 @@
 									<option selected></option>
 								</select>
 							</div>
+							<div class="alert alert-danger alert-dismissible fade" role="alert" id="invalidDate">
+								<strong>Please enter a valid term and year.</strong>
+								<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+								  <span aria-hidden="true">&times;</span>
+								</button>
+						 	</div>
 						</form-group> 
 					</div>
 				</div>
@@ -194,6 +208,12 @@
 									<option value="5">5-Awesome</option>
 								</select>
 							</div>
+							<div class="alert alert-danger alert-dismissible fade" role="alert" id="invalidOverall">
+								<strong>Please select an overall rating.</strong>
+								<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+								  <span aria-hidden="true">&times;</span>
+								</button>
+						 	</div>
 						</form-group> 
 					</div>
 				</div>
@@ -216,6 +236,12 @@
 									<option value="5">5–Hardest class I've ever taken</option>
 								</select>
 							</div>
+							<div class="alert alert-danger alert-dismissible fade" role="alert" id="invalidDifficulty">
+								<strong>Please select a difficulty rating.</strong>
+								<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+								  <span aria-hidden="true">&times;</span>
+								</button>
+						 	</div>
 						</form-group> 
 					</div>			
 				</div>
@@ -238,6 +264,12 @@
 									<option value="5">5–Hardest class I've ever taken</option>
 								</select>
 							</div>
+							<div class="alert alert-danger alert-dismissible fade" role="alert" id="invalidWorkload">
+								<strong>Please select a workload rating.</strong>
+								<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+								  <span aria-hidden="true">&times;</span>
+								</button>
+						 	</div>
 						</form-group> 
 					</div>			
 				</div>
@@ -255,6 +287,12 @@
 							</div>
 						</form-group> 
 					</div>
+					<div class="alert alert-danger alert-dismissible fade" role="alert" id="invalidProf">
+						<strong>Please input a professor.</strong>
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						  <span aria-hidden="true">&times;</span>
+						</button>
+					 </div>
 				</div>
 
 				<!-- Grade -->
@@ -288,6 +326,12 @@
 									<option value="Audit/No Grade">Audit/No Grade</option>
 								</select>
 							</div>
+							<div class="alert alert-danger alert-dismissible fade" role="alert" id="invalidGrade">
+								<strong>Please select a grade.</strong>
+								<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+								  <span aria-hidden="true">&times;</span>
+								</button>
+						 	</div>
 						</form-group> 
 					</div>			
 				</div>
@@ -307,6 +351,12 @@
 									<option value="Not Mandatory">Not Mandatory</option>
 								</select>
 							</div>
+							<div class="alert alert-danger alert-dismissible fade" role="alert" id="invalidAttendance">
+								<strong>Please select attendance.</strong>
+								<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+								  <span aria-hidden="true">&times;</span>
+								</button>
+						 	</div>
 						</form-group> 
 					</div>			
 				</div>
