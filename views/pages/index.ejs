@@ -49,16 +49,6 @@
     <script>
         var url = "index.js";
         $.getScript(url);
-        
-        // TESTING
-        
-        firebase.auth().onAuthStateChanged(user => {
-        console.log(user);
-        if (user != null){
-              console.log(user.displayName);
-          }
-     });
-     
     </script>
 </body>
 </html>
