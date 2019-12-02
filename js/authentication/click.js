@@ -9,6 +9,9 @@ $(document).ready(function ()
                         });
                         window.location = 'home';
                 }
+                if(!user){
+                    $("display_name").empty();
+                }
         });
     });
 });
