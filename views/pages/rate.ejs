@@ -109,6 +109,7 @@
 			<h1 class="head text-center">Rate a Class</h1>
 			<form class="needs-validation" id="rating" action="/post_class" method="POST" novalidate>
 			<div class="container">
+				
 				<!-- Department -->
 				<div class="row">
 					<div class="col-3">
@@ -118,7 +119,7 @@
 						<form-group>
 							<div class="container text-center" style="padding: 2% 0 2% 0">
 								<label class="mr-sm-2" for="department">Select a Department:</label>
-								<select name="dep" class="custom-select my-1 mr-sm-2" id="dep" style="width: 20%" required>
+								<select name="dep" class="custom-select my-1 mr-sm-2" id="dep" style="width: 25%" required>
 									<option selected></option>
 								</select>
 							</div>
@@ -140,20 +141,20 @@
 					</div>
 					<div class="col-9">
 						<form-group>
-							<div class="container text-center" style="padding: 2% 0 2% 0">
+							<div class="container text-center" style="padding: 2% 0 2% 0; margin: 0 !important">
 								<label class="mr-sm-2" for="class_num">Enter a Course Number:</label>
-								<input name="class_num" type="text" class="form-control" id="class_num" style="width: 20%" required>
+								<input placeholder="e.g. 11 or 011" name="class_num" type="text" class="form-control" id="class_num" style="width: 25%; margin: 0" required>
 							</div>
 							<div class="alert alert-danger alert-dismissible fade" role="alert" id="invalidCourseCode">
 								<strong>Please enter a valid course code.</strong>
 								<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-								  <span aria-hidden="true">&times;</span>
+									<span aria-hidden="true">&times;</span>
 								</button>
-						 	</div>
-
+							</div>
 						</form-group> 
 					</div>
 				</div>
+
 
 				<!-- Date Taken -->
 				<div class="row">
@@ -165,7 +166,7 @@
 							<div class="container text-center" style="padding: 2% 0 2% 0">
 								<!-- Term -->
 								<label class="mr-sm-2" for="term">Term: </label>
-								<select name="term" class="custom-select my-1 mr-sm-2" id="term" style="width: 20%" required>
+								<select name="term" class="custom-select my-1 mr-sm-2" id="term" style="width: 25%" required>
 									<option selected></option>
 									<option value="Fall">Fall</option>
 									<option value="Spring">Spring</option>
@@ -174,7 +175,7 @@
 								</select>
 								<!-- Year -->
 								<label class="mr-sm-2" for="year">Year: </label>
-								<select name="year" class="custom-select my-1 mr-sm-2" id="year" style="width: 20%" required>
+								<select name="year" class="custom-select my-1 mr-sm-2" id="year" style="width: 25%" required>
 									<option selected></option>
 								</select>
 							</div>
@@ -199,7 +200,7 @@
 						<form-group>
 							<div class="container text-center" style="padding: 2% 0 2% 0">
 								<label class="mr-sm-2" for="overall">Rate the Overall Course:</label>
-								<select name="overall" class="custom-select my-1 mr-sm-2" id="overall" style="width: 20%" required>
+								<select name="overall" class="custom-select my-1 mr-sm-2" id="overall" style="width: 25%" required>
 									<option selected></option>
 									<option value="1">1–Terrible</option>
 									<option value="2">2-Mediocre</option>
@@ -227,7 +228,7 @@
 						<form-group>
 							<div class="container text-center" style="padding: 2% 0 2% 0">
 								<label class="mr-sm-2" for="difficulty">Rate the Level of Difficulty:</label>
-								<select name="difficulty" class="custom-select my-1 mr-sm-2" id="difficulty" style="width: 20%" required>
+								<select name="difficulty" class="custom-select my-1 mr-sm-2" id="difficulty" style="width: 25%" required>
 									<option selected></option>
 									<option value="1">1-I just have to show up to get an A</option>
 									<option value="2">2-Pretty Easy</option>
@@ -255,7 +256,7 @@
 						<form-group>
 							<div class="container text-center" style="padding: 2% 0 2% 0">
 								<label class="mr-sm-2" for="workload">Rate the Level of Work:</label>
-								<select name="workload" class="custom-select my-1 mr-sm-2" id="workload" style="width: 20%" required>
+								<select name="workload" class="custom-select my-1 mr-sm-2" id="workload" style="width: 25%" required>
 									<option selected></option>
 									<option value="1">1-I just have to show up to get an A</option>
 									<option value="2">2-Pretty Easy</option>
@@ -282,8 +283,8 @@
 					<div class="col-9">
 						<form-group>
 							<div class="container text-center" style="padding: 2% 0 2% 0">
-								<label class="mr-sm-2" for="prof">Professor:</label>
-								<input name="prof" type="text" class="form-control" id="prof" style="width: 20%" required>
+								<label class="mr-sm-2" for="prof">Enter the Professor:</label>
+								<input placeholder="e.g. Johnny Appleseed" name="prof" type="text" class="form-control" id="prof" style="width: 25%; margin: 0" required>
 							</div>
 						</form-group> 
 					</div>
@@ -304,7 +305,7 @@
 						<form-group>
 							<div class="container text-center" style="padding: 2% 0 2% 0">
 								<label class="mr-sm-2" for="grade">Grade Received:</label>
-								<select name="grade" class="custom-select my-1 mr-sm-2" id="grade" style="width: 20%" required>
+								<select name="grade" class="custom-select my-1 mr-sm-2" id="grade" style="width: 25%" required>
 									<option selected></option>
 									<option value="A+">A+</option>
 									<option value="A">A</option>
@@ -345,7 +346,7 @@
 						<form-group>
 							<div class="container text-center" style="padding: 2% 0 2% 0">
 								<label class="mr-sm-2" for="attendance">Attendance:</label>
-								<select name="attendance" class="custom-select my-1 mr-sm-2" id="attendance" style="width: 20%" required>
+								<select name="attendance" class="custom-select my-1 mr-sm-2" id="attendance" style="width: 25%" required>
 									<option selected></option>
 									<option value="Mandatory">Mandatory</option>
 									<option value="Not Mandatory">Not Mandatory</option>
