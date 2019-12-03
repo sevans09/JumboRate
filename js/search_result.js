@@ -142,13 +142,13 @@ function display_html(rating, color) {
             <div class="row">
                 <div class="col-3">
                     <div class="white">
-                        <span>` + rating.overall + `</span> Overall Rating
+                        Overall Rating: <span>` + rating.overall + `</span> 
                     </div>
                     <div class="white">
-                        <span>` + rating.difficulty + `</span> Difficulty
+                        Difficulty: <span>` + rating.difficulty + `</span> 
                     </div>
                     <div class="white">
-                        <span>` + rating.workload + `</span> Workload
+                        Workload: <span>` + rating.workload + `</span> 
                     </div>
                 </div>
                 <div class="col-1.5 white">

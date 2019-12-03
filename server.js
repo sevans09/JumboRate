@@ -24,10 +24,6 @@ app.get('/nevis.ttf', function(req, res) {
 });
 
 // JavaScript Files
-app.get('/firebase.js', function(req, res) {
-     res.sendFile(path.join(__dirname, 'js/firebase/firebase.js'));
-});
-
 app.get('/index.js', function(req, res) {
      res.sendFile(path.join(__dirname, 'js/index.js'));
 });
@@ -79,6 +75,26 @@ app.get('/eli.jpg', function(req, res) {
 
 app.get('/departments_json', function(req, res) {
      res.sendFile(path.join(__dirname, 'views/partials/departments.json'));
+});
+
+app.get('/brooke.jpg', function(req, res) {
+     res.sendFile(path.join(__dirname, 'views/images/brooke.jpg'));
+});
+
+app.get('/sook.jpg', function(req, res) {
+     res.sendFile(path.join(__dirname, 'views/images/sook.jpg'));
+});
+
+app.get('/nicole.jpg', function(req, res) {
+     res.sendFile(path.join(__dirname, 'views/images/nicole.jpg'));
+});
+
+app.get('/eli.jpg', function(req, res) {
+     res.sendFile(path.join(__dirname, 'views/images/eli.jpg'));
+});
+
+app.get('/tufts_secrets.jpg', function(req, res) {
+     res.sendFile(path.join(__dirname, 'views/images/tufts_secrets.jpg'));
 });
 
 // HTML Page Files
