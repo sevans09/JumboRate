@@ -61,6 +61,22 @@ app.get('/profile_icon.png', function(req, res) {
      res.sendFile(path.join(__dirname, 'views/images/profile_icon.png'));
 });
 
+app.get('/brooke.jpg', function(req, res) {
+     res.sendFile(path.join(__dirname, 'views/images/brooke.jpg'));
+});
+
+app.get('/nicole.jpg', function(req, res) {
+     res.sendFile(path.join(__dirname, 'views/images/nicole.jpg'));
+});
+
+app.get('/sook.jpg', function(req, res) {
+     res.sendFile(path.join(__dirname, 'views/images/sook.jpg'));
+});
+
+app.get('/eli.jpg', function(req, res) {
+     res.sendFile(path.join(__dirname, 'views/images/eli.jpg'));
+});
+
 app.get('/departments_json', function(req, res) {
      res.sendFile(path.join(__dirname, 'views/partials/departments.json'));
 });
