@@ -1,82 +1,81 @@
-/* Custom page CSS
--------------------------------------------------- */
-/* Not required for template or sticky footer method. */
+/* styles.css */
+/* Custom styles after Bootstrap styles */
 
-    main > .container {
-        padding: 60px 15px 0;
-    }
+main > .container {
+    padding: 60px 15px 0;
+}
 
-    html, body {
-        margin: 0;
-        padding: 0;
-        border: 0;
-        background-color: rgb(175, 208, 241);
-        font-family: 'Open Sans', sans-serif;
-        font-size: 16px
-    }
+html, body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background-color: rgb(175, 208, 241);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px
+}
 
-    p {
-        font-size: 12px;
-    }
+p {
+    font-size: 12px;
+}
 
-    .head {
-        font-family: 'Montserrat', sans-serif;
-        font-weight: bolder;
-    }
+.head {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
+}
 
-    .sub {
-        font-family: 'Open Sans', sans-serif;
-    }
+.sub {
+    font-family: 'Open Sans', sans-serif;
+}
 
-    .blue {
-        color: #3F88C5;
-    }
+.blue {
+    color: #3F88C5;
+}
 
-    .white {
-        color: #fff;
-    }
+.white {
+    color: #fff;
+}
 
-    .light {
-        font-style: lighter;
-    }
+.light {
+    font-style: lighter;
+}
 
-    .brown {
-        color: #654321;
-    } 
+.brown {
+    color: #654321;
+} 
 
-    .row {
-        padding: .5% 0 .5% 0;
-    }
+.row {
+    padding: .5% 0 .5% 0;
+}
 
-    .link {
-        text-decoration: none;
-        color: rgba(255,255,255,.5);
-        padding: 2%; 
-    }
+.link {
+    text-decoration: none;
+    color: rgba(255,255,255,.5);
+    padding: 2%; 
+}
 
-    .link:hover {
-        text-decoration: none;
-        color: rgba(255,255,255,.75);
-    }
+.link:hover {
+    text-decoration: none;
+    color: rgba(255,255,255,.75);
+}
 
-    .footer > .container {
-        padding-right: 15px;
-        padding-left: 15px;
-    }
+.footer > .container {
+    padding-right: 15px;
+    padding-left: 15px;
+}
 
-    .go-btn {
-        width: 10%;
-    }
+.go-btn {
+    width: 10%;
+}
 
-    .login_box {
-        width: 50%;
-        background-color: #3F88C5;
-        padding: 3% 0%;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 2%;
-    }
+.login_box {
+    width: 50%;
+    background-color: #3F88C5;
+    padding: 3% 0%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+}
 
-    code {
-        font-size: 80%;
-    }
+code {
+    font-size: 80%;
+}
