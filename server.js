@@ -77,6 +77,10 @@ app.get('/eli.jpg', function(req, res) {
      res.sendFile(path.join(__dirname, 'views/images/eli.jpg'));
 });
 
+app.get('/tufts_secrets.jpg', function(req, res) {
+     res.sendFile(path.join(__dirname, 'views/images/tufts_secrets.jpg'));
+});
+
 // HTML Page Files
 app.get('/', function(req, res) {
      res.render('pages/index');
