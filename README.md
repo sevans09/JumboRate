@@ -1,4 +1,4 @@
-# Rate My Tufts Classes
+# Jumbo Rate
 ## COMP20 Final Project Fall 2019
 
 ## Team Members

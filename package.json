@@ -1,7 +1,7 @@
 {
   "name": "comp20-rate-my-classes",
   "version": "1.0.0",
-  "description": "COMP20 Final Project Rate My Classes",
+  "description": "COMP20 Final Project Jumbo Rate",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

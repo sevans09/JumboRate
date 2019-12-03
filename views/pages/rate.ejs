@@ -4,6 +4,7 @@
 <html>
 
 <% include ../partials/header.ejs %>
+<script src="click.js"></script>
 
 <body>
 	<% include ../partials/nav.ejs %>
@@ -14,7 +15,6 @@
 		      if(!user) {
 			window.location = 'login.ejs';
 		      }
-		      console.log(user);
 	     });
 	</script>
 
@@ -125,7 +125,7 @@
 						<!-- COURSE NUMBER -->
 						<div class="form-group col-md-6">
 							<label class="mr-sm-2 brown" for="class_num">Course Number:</label>
-							<input placeholder="e.g. 11, 120" name="class_num" type="text" class="form-control" style="width: 90%" id="class_num" required>
+							<input placeholder="e.g. 11, 120 (only numeric digits)" name="class_num" type="text" class="form-control" style="width: 90%" id="class_num" required>
 						</div>
 					</div>
 
