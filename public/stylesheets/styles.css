@@ -39,6 +39,7 @@
     .light {
         font-style: lighter;
     }
+
     .brown {
         color: #654321;
     } 
@@ -46,6 +47,7 @@
     .row {
         padding: .5% 0 .5% 0;
     }
+
     .link {
         text-decoration: none;
         color: rgba(255,255,255,.5);
