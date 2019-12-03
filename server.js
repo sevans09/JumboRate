@@ -61,6 +61,22 @@ app.get('/departments_json', function(req, res) {
      res.sendFile(path.join(__dirname, 'views/partials/departments.json'));
 });
 
+app.get('/brooke.jpg', function(req, res) {
+     res.sendFile(path.join(__dirname, 'views/images/brooke.jpg'));
+});
+
+app.get('/sook.jpg', function(req, res) {
+     res.sendFile(path.join(__dirname, 'views/images/sook.jpg'));
+});
+
+app.get('/nicole.jpg', function(req, res) {
+     res.sendFile(path.join(__dirname, 'views/images/nicole.jpg'));
+});
+
+app.get('/eli.jpg', function(req, res) {
+     res.sendFile(path.join(__dirname, 'views/images/eli.jpg'));
+});
+
 // HTML Page Files
 app.get('/', function(req, res) {
      res.render('pages/index');
