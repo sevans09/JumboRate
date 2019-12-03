@@ -24,10 +24,6 @@ app.get('/nevis.ttf', function(req, res) {
 });
 
 // JavaScript Files
-app.get('/firebase.js', function(req, res) {
-     res.sendFile(path.join(__dirname, 'js/firebase/firebase.js'));
-});
-
 app.get('/index.js', function(req, res) {
      res.sendFile(path.join(__dirname, 'js/index.js'));
 });
