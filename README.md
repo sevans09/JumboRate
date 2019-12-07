@@ -8,18 +8,18 @@
 * Brooke Peterson
 
 ## Deployed Application
-https://tufts-rate-my-classes.herokuapp.com
+https://jumbo-rate.herokuapp.com
 
 ## Local Setup
 - `cd <PATH TO DIRECTORY YOU WANT YOUR CODE TO BE IN>`
-- `git clone https://github.com/sevans09/COMP20-rate-my-classes.git`
-- `cd COMP20-rate-my-classes`
+- `git clone https://github.com/sevans09/JumboRate.git`
+- `cd JumboRate`
 - Install Node.js from https://nodejs.org/en/download/
 - Install heroku (mac): `brew tap heroku/brew && brew install heroku`
 - `npm install express --save`
 
 ## Run Project Locally
-- Move into the `COMP20-rate-my-classes` directory 
+- Move into the `JumboRate` directory 
 - `heroku local web`
 - Go to http://localhost:8081/
 - Quit with Control+C
