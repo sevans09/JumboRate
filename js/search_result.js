@@ -140,16 +140,15 @@ function display_html(rating, color) {
             </div>
             <hr style="background-color:white">
             <div class="row">
-                <div class="col-3">
-                    <div class="white">
-                        Overall Rating: <span>` + rating.overall + `</span> 
-                    </div>
-                    <div class="white">
-                        Difficulty: <span>` + rating.difficulty + `</span> 
-                    </div>
-                    <div class="white">
-                        Workload: <span>` + rating.workload + `</span> 
-                    </div>
+                <div class="col-1.5 white">
+                    Overall Rating: </br>
+                    Difficulty: </br>
+                    Workload: 
+                </div>
+                <div class="col-3 white">
+                    `+ overall_desc(rating.overall) + `</br>
+                    `+ difficulty_desc(rating.difficulty) + `</br>
+                    `+ workload_desc(rating.workload) + `
                 </div>
                 <div class="col-1.5 white">
                     Professor: <br>
@@ -161,9 +160,42 @@ function display_html(rating, color) {
                     ` + rating.grade + `<br> 
                     ` + rating.attendance + `
                 </div>
-                <div class="col-5 white">
+                <div class="col-4 white">
                     ` + rating.comments + `
                 </div>
             </div>
         </div>`
+}
+
+// Returns overall description based on number rating
+function overall_desc(num) {
+    words = ["Terrible", 
+            "Mediocre", 
+            "Average", 
+            "Good", 
+            "Awesome"
+    ];
+    return words[num - 1];
+}
+
+// Returns difficulty description based on number rating
+function difficulty_desc(num) {
+    words = ["Just show up to get an A", 
+            "Pretty Easy",
+            "Manageable", 
+            "Hard", 
+            "Hardest class I've ever taken"
+    ];
+    return words[num - 1];
+}
+
+// Returns workload description based on number rating
+function workload_desc(num) {
+    words = ["Little to no work at all", 
+            "Some work, but easy",
+            "Average amount of work", 
+            "Lots of work", 
+            "The most work I've ever had"
+    ];
+    return words[num - 1];
 }
