@@ -204,28 +204,3 @@ app.get('/classes', function(req, res) {
           res.end();
      });
 });
-
-// Functions for testing only 
-
-// Update Field 
-// app.get('/update_field', (req, res) => {
-//      url = "class/COMP/20/-Lu_WRo4baxR9Y87FFPH/date";
-//      firebase.database().ref(url).set("6/5/2018");
-//      res.end();
-// });
-
-// js function to call /update_field (place in frontend js file)
-// function update_field() {
-//      var xhr = new XMLHttpRequest();
-     
-//      xhr.onreadystatechange = function () {
-//          if (this.readyState != 4) return;
-     
-//          if (this.status == 200) {
-//              console.log("success");
-//          }
-//      };
-     
-//      xhr.open('GET', '/update_field', true);
-//      xhr.send();
-//  }
