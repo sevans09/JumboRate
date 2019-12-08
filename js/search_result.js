@@ -142,44 +142,44 @@ function display_html(rating, color) {
         <div class="row">
             <div class="col-lg-7 white">
                 <div class="row">
-                    <div class="col-2 col-sm-3 white">
+                    <div class="col-sm-3 white">
                         Overall Rating:
                     </div>
-                    <div class="col-4 col-sm-3 white">
+                    <div class="col-sm-3 white">
                         `+ overall_desc(rating.overall) + `
                     </div>
-                    <div class="col-2 col-sm-3 white">
+                    <div class="col-sm-3 white">
                         Professor:
                     </div>
-                    <div class="col-4 col-sm-3 white">
+                    <div class="col-sm-3 white">
                         ` + rating.prof + `
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-2 col-sm-3 white">
+                    <div class="col-sm-3 white">
                         Difficulty:
                     </div>
-                    <div class="col-4 col-sm-3 white">
+                    <div class="col-sm-3 white">
                         `+ difficulty_desc(rating.difficulty) + `
                     </div>
-                    <div class="col-2 col-sm-3 white">
+                    <div class="col-sm-3 white">
                         Grade:
                     </div>
-                    <div class="col-4 col-sm-3 white">
+                    <div class="col-sm-3 white">
                         ` + rating.grade + `
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-2 col-sm-3 white">
+                    <div class="col-sm-3 white">
                         Workload:
                     </div>
-                    <div class="col-4 col-sm-3 white">
+                    <div class="col-sm-3 white">
                         `+ workload_desc(rating.workload) + `
                     </div>
-                    <div class="col-2 col-sm-3 white">
+                    <div class="col-sm-3 white">
                         Attendance:
                     </div>
-                    <div class="col-4 col-sm-3 white">
+                    <div class="col-sm-3 white">
                         ` + rating.attendance + `
                     </div>
                 </div>
