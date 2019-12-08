@@ -17,17 +17,17 @@
                 </div>
 
                 <!-- CONTACT FORM -->
-                <form style="padding: 5% 0%">
+                <form style="padding: 5% 0%" action="/post_comment" method="POST">
                     <div class="form-row">
                         <!-- NAME -->
                         <div class="form-group col-sm-6">
                             <label class="mr-sm-2 brown" for="class_num">Name</label>
-                            <input name="class_num" type="text" class="form-control" style="width: 100%" id="class_num" required>
+                            <input name="name" type="text" class="form-control" style="width: 100%" id="class_num" required>
                         </div>
                         <!-- EMAIL -->
                         <div class="form-group col-sm-6">
                             <label class="mr-sm-2 brown" for="class_num">Email</label>
-                            <input type="email" name="class_num" type="text" class="form-control" style="width: 100%" id="class_num" required>
+                            <input type="email" name="email" type="text" class="form-control" style="width: 100%" id="class_num" required>
                             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                         </div>
                     </div>
@@ -35,7 +35,7 @@
                         <!-- MESSAGE -->
                         <div class="form-group col-md-12">
                             <label class="brown" for="comments">Message</label>
-                            <textarea name="comments" style="width: 100%; margin: auto" class="form-control" id="comments" rows="3"></textarea>
+                            <textarea name="comments" style="width: 100%; margin: auto" class="form-control" id="comments" rows="3" required></textarea>
                         </div>	
                     </div>
                     

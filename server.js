@@ -159,8 +159,8 @@ app.post('/post_class', (req, res) => {
      rating.date = date;
 
      // Post to class/department/class_num
-     firebase.database().ref('class/' + req.body.dep + '/' + +(req.body.class_num)).push(rating);
-     res.redirect('/home?submit=true');
+     firebase.database().ref('class/' + req.body.dep + '/' +(req.body.class_num)).push(rating);
+     res.redirect('/home?submit=rating');
      res.end();
 });
 
@@ -203,4 +203,14 @@ app.get('/classes', function(req, res) {
           res.json(snapshot.val());
           res.end();
      });
+});
+
+// Add comment to database from contact page
+app.post('/post_comment', (req, res) => {
+     comment = req.body;
+
+     // Post to comment/
+     firebase.database().ref('comment/').push(comment);
+     res.redirect('/home?submit=comment');
+     res.end();
 });
