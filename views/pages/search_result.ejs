@@ -23,25 +23,25 @@
 
             <div class="container text-center">
                 <div class="row">
-                    <div class="column col-lg sub">
+                    <div class="column col-sm-4 sub">
                         Difficulty 
                     </div>
-                    <div class="column col-lg sub">
+                    <div class="column col-sm-4 sub">
                         Overall Rating
                     </div>
-                    <div class="column col-lg">
+                    <div class="column col-sm-4 sub">
                         Workload
                     </div>
                 </div>
                 <div class="row">
-                    <div id="difficulty" class="column col-lg value head blue">
-                        <h3 id="avg_difficulty"></h3>
+                    <div id="difficulty" class="column col-sm-4 head blue">
+                        <h3 id="avg_difficulty" style="display: inline;"></h3>/5
                     </div>
-                    <div id="overall_rating" class="column col-lg value head blue" style="font-size: 500%">
-                        <span id="avg_overall"></span>
+                    <div id="overall_rating" class="column col-sm-4 head blue">
+                        <h3 id="avg_overall" style="font-size: 500%; display: inline;"></h3>/5
                     </div>
-                    <div id="workload" class="column col-lg value head blue">
-                        <h3 id="avg_workload"></h3>
+                    <div id="workload" class="column col-sm-4 head blue">
+                        <h3 id="avg_workload" style="display: inline;"></h3>/5
                     </div>
                 </div>
             </div>
@@ -49,7 +49,7 @@
 
         <!-- Filter & Sort Options -->
         <div class="row justify-content-center" style="padding: 2% 0%">
-            <div class="col-4 text-center">
+            <div class="col-sm-4 text-center">
                 <label class="mr-sm-2" for="sort" style="color: #000">Sort By:</label> 
                 <select class="select" name="sort" id="select_sort" onchange="sort_data()" style="width: 50%">
                     <option value="Date">Date</option>
@@ -57,7 +57,7 @@
                     <option value="HtoL">Rating: High to Low</option>
                 </select>
             </div>
-            <div class="col-4 text-center">
+            <div class="col-sm-4 text-center">
                 <label class="mr-sm-2" for="filter" style="color: #000">Filter by Professor:</label> 
                 <select class="select" name="filter" id="select_filter" onchange="get_data()" style="width: 50%">
                     <option value="All">All</option>
