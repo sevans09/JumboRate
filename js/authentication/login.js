@@ -1,5 +1,5 @@
 // login.js 
-// JavaScript for Google API login
+// JavaScript for Google API login in login.ejs
 
 // 1) Create a new firebaseui.auth instance stored to our local variable ui
 const ui = new firebaseui.auth.AuthUI(firebase.auth());
