@@ -1,3 +1,6 @@
+// authentication.js 
+// JavaScript for authentication actions
+
 // Logs out current user
 function logOut() {
 	firebase.auth().signOut();
