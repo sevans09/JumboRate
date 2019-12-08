@@ -11,9 +11,9 @@
 	<!-- redirect to login to make a rating -->
 	<script> 
 	    firebase.auth().onAuthStateChanged(user => {
-		      if(!user) {
-			window.location = 'login.ejs';
-		      }
+			if(!user) {
+				window.location = 'login.ejs';
+			}
 	     });
 	</script>
 
