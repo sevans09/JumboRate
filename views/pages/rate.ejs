@@ -47,7 +47,6 @@
 					event.stopPropagation();
 				}
 				if (courseNum.match(/^[0-9]+$/) == null) {
-					console.log("letters in course num");
 					$("#invalidInput").addClass('show');
 					$('#invalidInput').delay(5000).fadeOut('slow');
 					event.preventDefault();
