@@ -131,7 +131,7 @@ function display_html(rating, color) {
     return html = 
     `<div class="container" style="background-color: rgba` + color + `; padding: 2% 2%;">
         <div class="row">
-            <div class="col-3">
+            <div class="col">
                 <div class="white">
                     ` + rating.term + ` ` + rating.year + `
                     (` + rating.date + `)
@@ -140,7 +140,7 @@ function display_html(rating, color) {
         </div>
         <hr style="background-color:white">
         <div class="row">
-            <div class="col-sm-7 white">
+            <div class="col-lg-7 white">
                 <div class="row">
                     <div class="col-2 col-sm-3 white">
                         Overall Rating:
@@ -184,7 +184,7 @@ function display_html(rating, color) {
                     </div>
                 </div>
             </div>
-            <div class="col-sm-5 white">
+            <div class="col-lg-5 white">
                 ` + rating.comments + `
             </div>
         </div>
