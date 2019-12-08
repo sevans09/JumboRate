@@ -140,31 +140,55 @@ function display_html(rating, color) {
             </div>
             <hr style="background-color:white">
             <div class="row">
-                <div class="col-1.5 white">
-                    Overall Rating: </br>
-                    Difficulty: </br>
-                    Workload: 
+                <div class="col-sm-7 white">
+                    <div class="row">
+                        <div class="col-2 col-sm-3 white">
+                            Overall Rating:
+                        </div>
+                        <div class="col-4 col-sm-3 white">
+                            `+ overall_desc(rating.overall) + `
+                        </div>
+                        <div class="col-2 col-sm-3 white">
+                            Professor:
+                        </div>
+                        <div class="col-4 col-sm-3 white">
+                            ` + rating.prof + `
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2 col-sm-3 white">
+                            Difficulty:
+                        </div>
+                        <div class="col-4 col-sm-3 white">
+                            `+ difficulty_desc(rating.difficulty) + `
+                        </div>
+                        <div class="col-2 col-sm-3 white">
+                            Grade:
+                        </div>
+                        <div class="col-4 col-sm-3 white">
+                            ` + rating.grade + `
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2 col-sm-3 white">
+                            Workload:
+                        </div>
+                        <div class="col-4 col-sm-3 white">
+                            `+ workload_desc(rating.workload) + `
+                        </div>
+                        <div class="col-2 col-sm-3 white">
+                            Attendance:
+                        </div>
+                        <div class="col-4 col-sm-3 white">
+                            ` + rating.attendance + `
+                        </div>
+                    </div>
                 </div>
-                <div class="col-3 white">
-                    `+ overall_desc(rating.overall) + `</br>
-                    `+ difficulty_desc(rating.difficulty) + `</br>
-                    `+ workload_desc(rating.workload) + `
-                </div>
-                <div class="col-1.5 white">
-                    Professor: <br>
-                    Grade: <br> 
-                    Attendance:  
-                </div>
-                <div class="col-2 white">
-                    ` + rating.prof + `<br>
-                    ` + rating.grade + `<br> 
-                    ` + rating.attendance + `
-                </div>
-                <div class="col-4 white">
+                <div class="col-sm-5 white">
                     ` + rating.comments + `
                 </div>
             </div>
-        </div>`
+    `
 }
 
 // Returns overall description based on number rating
