@@ -142,13 +142,13 @@ function display_html(rating, color) {
         <div class="row">
             <div class="col-lg-7 white">
                 <div class="row">
-                    <div class="col-sm-3 white" style="font-weight: bolder">
+                    <div class="col-sm-3 white" style="text-decoration: underline;">
                         Overall Rating:
                     </div>
                     <div class="col-sm-3 white">
                         `+ overall_desc(rating.overall) + `
                     </div>
-                    <div class="col-sm-3 white" style="font-weight: bolder">
+                    <div class="col-sm-3 white" style="text-decoration: underline;">
                         Professor:
                     </div>
                     <div class="col-sm-3 white">
@@ -156,13 +156,13 @@ function display_html(rating, color) {
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-sm-3 white" style="font-weight: bolder">
+                    <div class="col-sm-3 white" style="text-decoration: underline;">
                         Difficulty:
                     </div>
                     <div class="col-sm-3 white">
                         `+ difficulty_desc(rating.difficulty) + `
                     </div>
-                    <div class="col-sm-3 white" style="font-weight: bolder">
+                    <div class="col-sm-3 white" style="text-decoration: underline;">
                         Grade:
                     </div>
                     <div class="col-sm-3 white">
@@ -170,13 +170,13 @@ function display_html(rating, color) {
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-sm-3 white" style="font-weight: bolder">
+                    <div class="col-sm-3 white" style="text-decoration: underline;">
                         Workload:
                     </div>
                     <div class="col-sm-3 white">
                         `+ workload_desc(rating.workload) + `
                     </div>
-                    <div class="col-sm-3 white" style="font-weight: bolder">
+                    <div class="col-sm-3 white" style="text-decoration: underline;">
                         Attendance:
                     </div>
                     <div class="col-sm-3 white">
