@@ -52,20 +52,22 @@
         </div>
 
         <!-- Filter & Sort Options -->
-        <div class="row justify-content-center" style="padding: 2% 0%">
-            <div class="col-sm-4 text-center">
-                <label class="mr-sm-2" for="sort" style="color: #000">Sort By:</label> 
-                <select class="select" name="sort" id="select_sort" onchange="sort_data()" style="width: 50%">
-                    <option value="Date">Date</option>
-                    <option value="LtoH"> Rating: Low to High</option>
-                    <option value="HtoL">Rating: High to Low</option>
-                </select>
-            </div>
-            <div class="col-sm-4 text-center">
-                <label class="mr-sm-2" for="filter" style="color: #000">Filter by Professor:</label> 
-                <select class="select" name="filter" id="select_filter" onchange="get_data()" style="width: 50%">
-                    <option value="All">All</option>
-                </select>
+        <div class="container text-center" style="padding-top: 30px; padding-bottom: 25px;">
+            <div class="row justify-content-center">
+                <div class="col-lg-5 text-center">
+                    <label class="mr-sm-2" for="sort" style="color: #000000">Sort By:</label> 
+                    <select class="select" name="sort" id="select_sort" onchange="sort_data()" style="width: 50%">
+                        <option value="Date">Date</option>
+                        <option value="LtoH"> Rating: Low to High</option>
+                        <option value="HtoL">Rating: High to Low</option>
+                    </select>
+                </div>
+                <div class="col-lg-5 text-center">
+                    <label class="mr-sm-2" for="filter" style="color: #000000">Filter by Professor:</label> 
+                    <select class="select" name="filter" id="select_filter" onchange="get_data()" style="width: 50%">
+                        <option value="All">All</option>
+                    </select>
+                </div>
             </div>
         </div>
 
