@@ -2,10 +2,10 @@
 ## COMP20 Final Project Fall 2019
 
 ## Team Members
-* Sook-Hee Evans
-* Nicole Kennedy
-* Eli Lleshi
-* Brooke Peterson
+* Sook-Hee Evans - Environment setup and deployment, form validation
+* Nicole Kennedy - Database integration
+* Eli Lleshi - Authentication
+* Brooke Peterson - Design
 
 ## Deployed Application
 https://jumbo-rate.herokuapp.com
