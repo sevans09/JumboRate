@@ -97,6 +97,10 @@ app.get('/tufts_secrets.jpg', function(req, res) {
      res.sendFile(path.join(__dirname, 'views/images/tufts_secrets.jpg'));
 });
 
+app.get('/thumbnail.png', function(req, res) {
+     res.sendFile(path.join(__dirname, 'views/images/thumbnail.png'));
+});
+
 // HTML Page Files
 app.get('/', function(req, res) {
      res.render('pages/index');
