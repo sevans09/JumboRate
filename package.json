@@ -24,7 +24,7 @@
     "express": "^4.17.1",
     "express-validator": "^6.3.0",
     "firebase": "^7.5.0",
-    "firebase-admin": "^9.7.0",
+    "firebase-admin": "^11.4.1",
     "jquery": "^3.5.0",
     "mongodb": "^3.3.4",
     "popper.js": "^1.16.0"
